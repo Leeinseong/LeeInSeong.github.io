@@ -2,19 +2,25 @@
 import React, {Component} from 'react'
 import styled from 'styled-components';
 
-class Header extends Component{
+class Header extends Component {
     render() {
-        return (
-            <Container>
-                <Element>
-                    <ShortCut>로그인/회원가입</ShortCut>
-                    <Search><h1>LEEINSEONG</h1></Search>
-                </Element>
-            </Container>
-        )
+      return (
+        <Container>
+            <Element>
+                <ShortCut>로그인/회원가입</ShortCut>
+                <Logo>
+                    <img
+                    width="100%"
+                    height="100%"
+                    src="https://t1.daumcdn.net/cfile/tistory/99CD014B5BD01FA412"
+                    alt="logo"/>
+                    </Logo>
+                <Search><h1>React Blog</h1></Search>
+            </Element>
+        </Container>
+      );
     }
-}
-
+  }
   
 export default Header;
 
