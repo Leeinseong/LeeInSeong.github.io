@@ -1,59 +1,40 @@
 //Header 파일
 import React, {Component} from 'react'
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import Navigation from './Navigation';
 
 class Header extends Component {
     render() {
       return (
-        <Container>
-            <Element>
-                <ShortCut>로그인/회원가입</ShortCut>
-                <Logo>
-                    <img
-                    width="100%"
-                    height="100%"
-                    src="https://t1.daumcdn.net/cfile/tistory/99CD014B5BD01FA412"
-                    alt="logo"/>
-                    </Logo>
-                <Search><h1>React Blog</h1></Search>
-            </Element>
-        </Container>
+        <Head>
+          <ImgProfile src= "/img/MainProfile.jpg"/>
+          <h2 style={{textAlign:'center'}}>이인성(Lee InSeong)</h2>
+          <TextProfile>
+          ✉️ dlstjd0117@ajou.ac.kr<br/>
+          📞 010-2369-5186<br/>
+          🌍 <a target='_blank' href='https://github.com/Leeinseong' rel="noopener noreferrer" >https://github.com/Leeinseong</a>
+          </TextProfile>
+          <Navigation/>
+        </Head>
       );
     }
   }
-  
+
+const Head = styled.div`
+  position:relative;
+  top: 0px;
+  width: 20em;
+  background: #FFF2CF url(/img/HeaderBackGround.png) repeat;
+`
+ const ImgProfile = styled.img`
+  width: 15em;
+  height: 15em;
+  margin: 2em 2.5em 0em 2.5em;
+ `
+const TextProfile = styled.div`
+  margin: -15px 0px 30px 50px;
+`
+
 export default Header;
 
-const Container = styled.div`
-    width: 100%;
-    border-bottom: 1px solid #d1d8e4;
-`
-
-const Element = styled.div`
-    margin: 0 auto;
-    width: 1080px;
-    height: 100px;
-    display: flex;
-    flex-flow: row wrap;
-`
-
-const ShortCut = styled.div`
-    order: 1;
-    width: 100%;
-    height: 20px;
-    text-align: right;
-    background-color: #a8ff78;
-`
-
-const Logo = styled.div`
-    order: 2;
-    width: 200px;
-    height: 80px;
-`
-
-const Search = styled.div`
-    order: 3;
-    width: 880px;
-    background-color: #78ffd6;
-    text-align: center;
-`
