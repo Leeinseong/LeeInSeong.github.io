@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-//import stylesheet from 'https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css';
 import './Css/Career.css';
 
 class Career extends Component {
@@ -11,18 +10,18 @@ class Career extends Component {
             <h1 className="ContentTitle">Career</h1>
             <ul className="cbp_tmtimeline">
                 <li>
-                    <div className="cbp_tmtime"><span className="hidden">2012/03</span> <span className="large">~2018/02</span></div>
+                    <div className="cbp_tmtime"><span>2012/03</span> <span className="large">~2018/02</span></div>
                     <div className="cbp_tmicon bg-infgo"><i className="zmdi zmdi-city"></i></div>
                     <div className="cbp_tmlabel"> 
                       <TitleCareer>아주대학교 소프트웨어공학과</TitleCareer>
                       <DetailCareer>
                           <b>관련 프로젝트</b><br/>
-                      <a href="#">NFC 태그 주문 및 결제 프로그램</a><br/>
+                          <a href="#">NFC 태그 주문 및 결제 프로그램</a><br/>
                       </DetailCareer>
                     </div>
                 </li>
                 <li>
-                    <div className="cbp_tmtime" ><span>03:45 AM</span> <span>Today</span></div>
+                    <div className="cbp_tmtime" ><span>2018/03</span> <span>~2019/12</span></div>
                     <div className="cbp_tmicon bg-green"><i className="zmdi zmdi-case"></i></div>
                     <div className="cbp_tmlabel">
                         <TitleCareer>GSITM 커머스사업센터 LF팀</TitleCareer>
@@ -34,7 +33,7 @@ class Career extends Component {
                     </div>
                 </li>
                 <li>
-                    <div className="cbp_tmtime" ><span>01:22 PM</span> <span>Yesterday</span></div>
+                    <div className="cbp_tmtime" ><span>2020/01</span> <span>~Now</span></div>
                     <div className="cbp_tmicon bg-green"> <i className="zmdi zmdi-case"></i></div>
                     <div className="cbp_tmlabel">
                         <TitleCareer>LG CNS 스마트F&C사업부 스마트물류담당 스마트물류솔루션팀</TitleCareer>
@@ -46,7 +45,7 @@ class Career extends Component {
                     </div>
                 </li>
                 <li>
-                    <div className="cbp_tmtime" ><span>12:13 PM</span> <span>Two weeks ago</span></div>
+                    <div className="cbp_tmtime" ></div>
                     <div className="cbp_tmicon bg-blush"><i className="zmdi zmdi-pin"></i></div>
                     <div className="cbp_tmlabel">
                         <TitleCareer>개인 프로젝트</TitleCareer>
@@ -65,8 +64,8 @@ class Career extends Component {
     }
     
 const Container = styled.div`
-  height:50em;
-  padding: 20px 0px 0px 30px;
+  height:Auto;
+  padding: 20px 30px 30px 30px;
 `
 const TitleCareer = styled.h2` 
   font-size: 20px;

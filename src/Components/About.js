@@ -24,14 +24,17 @@ class About extends Component {
               정보처리기사
               SQLD
             </DetailAbout>
+
+            <ImgAbout style={{marginRight:"50px"}}></ImgAbout>
+            <ImgAbout></ImgAbout>
           </Container>
         );
     }
 }
 
 const Container = styled.div`
-  height:50em;
-  padding: 20px 0px 0px 30px;
+  height:Auto;
+  padding: 20px 30px 30px 30px;
   background: #F3F3F3;
 `
 
@@ -42,4 +45,9 @@ const DetailAbout = styled.p`
   margin-top: 0px;
   line-height : 1.7;
 `
+const ImgAbout = styled.img`
+  width: 400px;
+  height:300px;
+`
+
 export default About;

@@ -42,3 +42,7 @@
     border: none;
     width: 100%;
   }
+
+  .rstm-tree-item-level1{
+    font-size: 18px;
+  }

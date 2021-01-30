@@ -6,6 +6,9 @@ class Skill extends Component {
         return (
           <Container className="Skill">
             <h1 className="ContentTitle">Skill</h1>
+            주스킬
+            언어 사진들 나열<br/>
+            부스킬
           </Container>
         );
       }
@@ -13,7 +16,7 @@ class Skill extends Component {
     
        
 const Container = styled.div`
-height:50em;
-padding: 20px 0px 0px 30px;
+  height:Auto;
+  padding: 20px 30px 30px 30px;
 `
   export default Skill;

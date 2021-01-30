@@ -26,37 +26,33 @@ class Navigation extends Component {
             label: "Projects",
             nodes: [
               {
-                key: "A",
-                label: "A"
+                key: "IS-Telegram",
+                label: "개인-텔레그램 챗봇"
               },
               {
-                key: "B",
-                label: "B"
+                key: "CNS-Lotte",
+                label: "LG-롯데 스마트/세미다크"
               },
               {
-                key: "C",
-                label: "C"
+                key: "CNS-Coupang",
+                label: "LG-쿠팡 물류센터"
               },
               {
-                key: "D",
-                label: "D"
+                key: "ITM-Brandmall",
+                label: "GS-LF몰 브랜드몰"
               },
               {
-                key: "E",
-                label: "E"
+                key: "ITM-NBOS",
+                label: "GS-NBOS 구조개선"
               },
               {
-                key: "F",
-                label: "F"
+                key: "S&AT-Messenger",
+                label: "S&AT-메신저 프로그램"
               },
               {
-                key: "G",
-                label: "G"
-              },
-              {
-                key: "H",
-                label: "H"
-              },
+                key: "IS-NFC",
+                label: "개인-NFC태그 주문결제"
+              }
             ]
           },
           {
@@ -76,6 +72,7 @@ class Navigation extends Component {
             initialOpenNodes={this.state.initiallyOpenProperties}
             hasSearch={false}
             onClickItem={({ key, label, ...props }) => {
+              if(props.level == "1") key =  key.split("/" )[1]
               document.getElementsByClassName(key)[0].scrollIntoView();
             }}
           />
@@ -85,22 +82,3 @@ class Navigation extends Component {
   }
   
 export default Navigation;
-
-const Nav = styled.div`
-    width: 100%;
-    height: 30px;
-    border-bottom: 1px solid #d1d8e4;
-`
-
-const NavList = styled.ul`
-    width: 100%;
-    display: flex;
-    margin: 0 auto;
-`
-
-const NavItem = styled.li`
-    width: 60px;
-    margin-left: 18px;
-    margin-top: 5px;
-    display: flex;
-`
