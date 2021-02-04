@@ -7,9 +7,24 @@ class Project extends Component {
           <Container className="Project">
             <h1 className="ContentTitle" style={{marginBottom:"20px"}}>Project</h1>
 
-            <SubContainer className="IS-Telegram">
+            <SubContainer id="IS-Portfolio"  className="IS-Portfolio">
               <TitleDiv>프로젝트명</TitleDiv>
-              <ContentDiv>[개인]가상화폐 거래(지갑/토큰) 분석 텔레그램 챗봇</ContentDiv>
+              <ContentDiv>[개인] 개발자 포토폴리와 깃허브 페이지</ContentDiv>
+              <TitleDiv>기간</TitleDiv>
+              <ContentDiv>2021년 1월 ~ 2021년 2월</ContentDiv>
+              <TitleDiv>개발환경</TitleDiv>
+              <ContentDiv>ReactJS, JavaScript</ContentDiv>
+              <TitleDiv>상세설명</TitleDiv>
+              <ContentDiv>
+                ReactJS를 이용하여 구연한 개발자 Portfolio 반응형 웹페이지
+              </ContentDiv>
+              <TitleDiv>Git</TitleDiv>
+              <ContentDiv></ContentDiv>
+            </SubContainer>
+
+            <SubContainer id="IS-Telegram" className="IS-Telegram">
+              <TitleDiv>프로젝트명</TitleDiv>
+              <ContentDiv>[개인] 가상화폐 거래(지갑/토큰) 분석 텔레그램 챗봇</ContentDiv>
               <TitleDiv>기간</TitleDiv>
               <ContentDiv>2020년 5월 ~ NOW</ContentDiv>
               <TitleDiv>개발환경</TitleDiv>
@@ -20,9 +35,11 @@ class Project extends Component {
               <ContentDiv>
                 Etherscan API를 통해 지정한 특정 지갑 또는 코인의 이동을 분석하고 설정한 조건에 맞는 Transaction 정보를 Telegram ChatBot을 통해 실시간으로 알려주는 프로그램
               </ContentDiv>
+              <TitleDiv>Git</TitleDiv>
+              <ContentDiv></ContentDiv>
             </SubContainer>
 
-            <SubContainer className="CNS-Lotte">
+            <SubContainer id="CNS-Lotte" className="CNS-Lotte">
               <TitleDiv>프로젝트명</TitleDiv>
               <ContentDiv>[신규/확산](LG CNS - 롯데마트)롯데마트 스마트/세미다크 스토어 (예약배송, 바로배송)</ContentDiv>
               <TitleDiv>기간</TitleDiv>
@@ -33,10 +50,10 @@ class Project extends Component {
               <ContentDiv>Oracle, MSSQL</ContentDiv>
               <TitleDiv>상세설명</TitleDiv>
               <ContentDiv>
-                롯데마트의 스마트스토어(바로배송 + 예약배송 + 픽업)과 세미다크(예약배송 + 픽업)에서 피킹완료부터 출하장까지 분류를 자동화 해주는 시스템<br/><br/>
+                롯데마트의 스마트스토어(바로배송 + 예약배송 + 픽업)과 세미다크(예약배송 + 픽업)에서 피킹완료부터 출하장까지 분류를 자동화 시스템<br/><br/>
                 *참조 <br/>
-                스마트스토어 : <a href="http://biz.newdaily.co.kr/site/data/html/2020/12/18/2020121800058.htmlhttps://www.mk.co.kr/news/business/view/2020/10/1108816">http://biz.newdaily.co.kr/site/data/html/2020/12/18/2020121800058.htmlhttps://www.mk.co.kr/news/business/view/2020/10/1108816</a><br/>
-                세미다크스토어 : <a href="https://www.mk.co.kr/news/business/view/2020/10/1108816">https://www.mk.co.kr/news/business/view/2020/10/1108816</a>
+                <a href="http://biz.newdaily.co.kr/site/data/html/2020/12/18/2020121800058.html">스마트스토어</a><br/>
+                <a href="https://www.mk.co.kr/news/business/view/2020/10/1108816">세미다크스토어</a>
               </ContentDiv>
               <TitleDiv>역할</TitleDiv>
               <ContentDiv>
@@ -47,7 +64,7 @@ class Project extends Component {
                 </ContentDiv>
             </SubContainer>
             
-            <SubContainer className="CNS-Coupang">
+            <SubContainer id="CNS-Coupang" className="CNS-Coupang">
               <TitleDiv>프로젝트명</TitleDiv>
               <ContentDiv>[신규/개선](LG CNS - 쿠팡) 쿠팡 신선 및 일반 배송/물류 배송 시스템(부천1, 부천2, 고양)</ContentDiv>
               <TitleDiv>기간</TitleDiv>
@@ -65,7 +82,7 @@ class Project extends Component {
               </ContentDiv>
             </SubContainer>
             
-            <SubContainer className="ITM-Brandmall">
+            <SubContainer id="ITM-Brandmall" className="ITM-Brandmall">
               <TitleDiv>프로젝트명</TitleDiv>
               <ContentDiv>[신규](GS ITM - LFMALL) 브랜드몰 구축(마에스트로, 헤지스, 블루라운지, 라푸마)</ContentDiv>
               <TitleDiv>기간</TitleDiv>
@@ -87,7 +104,7 @@ class Project extends Component {
               </ContentDiv>
             </SubContainer>
             
-            <SubContainer className="ITM-NBOS">
+            <SubContainer id="ITM-NBOS" className="ITM-NBOS">
               <TitleDiv>프로젝트명</TitleDiv>
               <ContentDiv>[구조개선](GS ITM - LFMALL) SBOS LFMall 어드민 구조개선</ContentDiv>
               <TitleDiv>기간</TitleDiv>
@@ -115,7 +132,7 @@ class Project extends Component {
               </ContentDiv>
             </SubContainer>
 
-            <SubContainer className="S&AT-Messenger">
+            <SubContainer id="S&AT-Messenger" className="S&AT-Messenger">
               <TitleDiv>프로젝트명</TitleDiv>
               <ContentDiv>[신규](S&AT) SMART CITY 프로젝트의 메신저 프로그램 개발</ContentDiv>
               <TitleDiv>기간</TitleDiv>
@@ -135,7 +152,7 @@ class Project extends Component {
               </ContentDiv>
             </SubContainer>
 
-            <SubContainer className="IS-NFC">
+            <SubContainer id="IS-NFC" className="IS-NFC">
               <TitleDiv>프로젝트명</TitleDiv>
               <ContentDiv>[개인] NFC 태그를 통한 셀프 주문 시스템</ContentDiv>
               <TitleDiv>기간</TitleDiv>
@@ -162,13 +179,13 @@ class Project extends Component {
     
 const Container = styled.div`
   height:Auto;
-  padding: 20px 30px 30px 30px;
+  padding: 20px 20px 20px 30px;
   background: #F3F3F3;
 `
 
 const SubContainer = styled.div`
   display:grid;
-  grid-template-columns: 150px auto;
+  grid-template-columns: auto;
   grid-gap : 0;
   border : solid;
   background: #FFFFFF;
@@ -179,14 +196,14 @@ const TitleDiv = styled.div`
   padding: 10px 10px 10px 10px;
   border-right: solid grey 0.5px;
   border-bottom: solid grey 0.5px;
-  &:nth-last-child(2){
-    border-bottom: 0px;
-  }
+  font-size:15px;
+  font-weight: bold;
 `
 
 const ContentDiv = styled.div`
   padding: 10px;
   border-bottom: solid grey 0.5px;
+  font-size:15px;
   &:nth-last-child(1){
     border-bottom: 0px;
   }

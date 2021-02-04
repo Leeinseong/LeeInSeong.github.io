@@ -1,12 +1,12 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Main, About, Project, Skill } from './index';
+import { Main} from './index';
 
-const Router = () => (
+const MobileRouter = () => (
     <Switch>
         <Route exact path="/"        component={Main} />
     </Switch>
 );
 
 
-export default Router;
+export default MobileRouter;

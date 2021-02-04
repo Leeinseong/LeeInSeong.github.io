@@ -4,12 +4,12 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 
-class Header extends Component {
+class MobileHeader extends Component {
     render() {
       return (
         <Head>
           <ImgProfile src= "/img/MainProfile.jpg"/>
-          <h2 style={{textAlign:'center'}}>이인성(Lee InSeong)</h2>
+          <h2 style={{textAlign:'center', marginTop:"10px"}}>이인성(Lee InSeong)</h2>
           <TextProfile>
           ✉️ dlstjd0117@ajou.ac.kr<br/>
           📞 010-2369-5186<br/>
@@ -22,19 +22,19 @@ class Header extends Component {
   }
 
 const Head = styled.div`
-  position:relative;
   top: 0px;
-  width: 20em;
+  width: 100%;
   background: #FFF2CF url(/img/HeaderBackGround.png) repeat;
+  text-align:center;
+  padding: 40px 0px;
 `
  const ImgProfile = styled.img`
   width: 15em;
   height: 15em;
-  margin: 2em 2.5em 0em 2.5em;
  `
 const TextProfile = styled.div`
-  margin: -15px 0px 30px 50px;
+  margin-top: -10px;
 `
 
-export default Header;
+export default MobileHeader;
 

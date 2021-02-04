@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import './Css/Navigation.css';
 
-class Navigation extends Component {
+class PC_Navigation extends Component {
   
     constructor(props) {
       super(props);
@@ -66,7 +66,7 @@ class Navigation extends Component {
 
     render() {
       return (
-        <div>
+        <div style={{display:"none"}}>
           <TreeMenu
             data={this.state.properties}
             initialOpenNodes={this.state.initiallyOpenProperties}
@@ -81,4 +81,4 @@ class Navigation extends Component {
     }
   }
   
-export default Navigation;
+export default PC_Navigation;

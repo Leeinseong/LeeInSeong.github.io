@@ -1,19 +1,53 @@
 import React, { Component } from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
-import Header from './Layout/Header';
-import Router from './Route/Router';
 
+import PCHeader from './PC/Layout/Header';
+import PCRouter from './PC/Route/Router';
+
+import MobileHeader from './MOBILE/Layout/Header';
+import MobileRouter from './MOBILE/Route/Router';
+
+import Media from 'react-media';
+
+const GOLBAL_MEDIA_QURIES = {
+  pc: "(min-width: 768px)",
+  mobile: "(max-width: 767px)"
+}
 
 class App extends Component {
   render() {
     return (
-      <Layout>
-        <GlobalStyle/>
-        <Header />
-        <Content>
-          <Router />
-        </Content>
-      </Layout>
+        <Media queries={GOLBAL_MEDIA_QURIES}>
+          {matches => {
+            return(
+              <>
+              {
+                matches.pc &&
+                <Layout>
+                  <GlobalStyle/>
+                  <PCHeader />
+                  <Content>
+                    <PCRouter />
+                  </Content>
+                </Layout>
+              }
+              {
+                matches.mobile &&
+                <>
+                <MobileLayout>
+                  <GlobalStyle/>
+                  <MobileHeader />
+                  <MobileContent>
+                    <MobileRouter />
+                  </MobileContent>
+                </MobileLayout>
+                </>
+              }
+              </>
+            )
+          }}
+        </Media>
+
     );
   }
 }
@@ -34,5 +68,18 @@ const Content = styled.div`
 margin: 0 auto;
 width : 100%
 `
+
+const MobileLayout = styled.div`
+  margin: 0 0;
+  width: 100%;
+`
+
+const MobileContent = styled.div`
+  margin: 0 0;
+  width: 100%;
+`
+
+
+
 
 export default App;
