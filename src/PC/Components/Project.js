@@ -6,7 +6,7 @@ class Project extends Component {
         return (
           <Container className="Project">
             <h1 className="ContentTitle" style={{marginBottom:"20px"}}>Project</h1>
-
+            <ButtonContainer>[개인] 개발자 포토폴리와 깃허브 페이지</ButtonContainer>
             <SubContainer className="IS-Portfolio">
               <TitleDiv>프로젝트명</TitleDiv>
               <ContentDiv>[개인] 개발자 포토폴리와 깃허브 페이지</ContentDiv>
@@ -182,6 +182,10 @@ const Container = styled.div`
   padding: 20px 30px 30px 30px;
   background: #F3F3F3;
 `
+const ButtonContainer = styled.div`
+  padding: 10px;
+  background: #FFFFFF;
+`
 
 const SubContainer = styled.div`
   display:grid;
@@ -189,7 +193,8 @@ const SubContainer = styled.div`
   grid-gap : 0;
   border : solid;
   background: #FFFFFF;
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
+  display:none; 
 `
 
 const TitleDiv = styled.div`
