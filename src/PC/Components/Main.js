@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Portfolio   from './Portfolio';
 import About   from './About';
 import Career  from './Career';
 import Project from './Project';
@@ -19,6 +20,7 @@ class Main extends Component {
     render() {
         return (
           <>
+          <Portfolio/>
           <About/>
           <Career/>
           <Project/>
