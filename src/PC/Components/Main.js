@@ -21,10 +21,6 @@ class Main extends Component {
         return (
           <>
           <Portfolio/>
-          <About/>
-          <Career/>
-          <Project/>
-          <Skill/>
           </>
         );
       }

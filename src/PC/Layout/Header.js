@@ -48,6 +48,11 @@ const InnerDiv = styled.div`
   width: 1280px;
   margin: 0 auto;
   height: 70px;
+  
+  @media only screen and (max-width: 1280px) {
+    width: auto;
+    padding: 0 10px;
+  }
 `
  const ImgProfile = styled.img`
   position: absolute;
