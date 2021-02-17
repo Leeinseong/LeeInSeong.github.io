@@ -20,9 +20,6 @@ class Main extends Component {
         return (
           <>
           <About/>
-          <Career/>
-          <Project/>
-          <Skill/>
           </>
         );
       }

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 class Portfolio extends Component {
     render() {
         return (
-          <Container className="About">
+          <Container className="Portfolio">
             <InnerDiv>
               <TextDiv>
                 <TextP1>LeeInSeong</TextP1>

@@ -13,18 +13,15 @@
 
 .cbp_tmtimeline>li .cbp_tmtime {
     display: block;
-    width: 16%;
+    padding-left: 100px;
     padding-right: 70px;
     position: absolute
 }
 
 .cbp_tmtimeline>li .cbp_tmtime span {
     display: block;
-    text-align: right
-}
-
-.cbp_tmtimeline>li .cbp_tmtime span {
-    font-size: 15px;
+    text-align: right;
+    font-size: 18px;
     color: #3d4c5a;
     font-weight: 700
 }
