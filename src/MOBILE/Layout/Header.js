@@ -6,8 +6,9 @@ import Navigation from './Navigation';
 
 class MobileHeader extends Component {
     render() {
+//      window.removeEventListener('scroll', getCurrentScroll, );
       return (
-        <Head>
+        <Head id="Header">
           <ImgProfile src= "/img/MainProfile.jpg"/>
           <h2 style={{textAlign:'center', marginTop:"10px"}}>이인성(Lee InSeong)</h2>
           <TextProfile>
@@ -26,7 +27,6 @@ const Head = styled.div`
   width: 100%;
   background: #FFF2CF url(/img/HeaderBackGround.png) repeat;
   text-align:center;
-  padding: 40px 0px;
 `
  const ImgProfile = styled.img`
   width: 15em;

@@ -3,12 +3,13 @@ import React, {Component} from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
+import App from '../../App'
 
 const getCurrentScroll = () =>{
   if( window.scrollY >= 80){
     document.getElementById("Header").style.background="#FFFFFF";
     document.getElementById("Header").style.borderBottom="1px solid rgb(235, 235, 235)";
-    document.getElementById("LogoImg").style.display="block";
+    document.getElementById("LogoImg").style.display="block";  
   }
   else{
     document.getElementById("Header").style.background="none";
@@ -16,28 +17,30 @@ const getCurrentScroll = () =>{
     document.getElementById("LogoImg").style.display="none";
   }
 }
-window.addEventListener('scroll', getCurrentScroll);
 
 class PC_Header extends Component {
-    render() {
-      return (
-        <Head id="Header">
-          <InnerDiv>
-            <ImgProfile id="LogoImg" src= "/img/IN.png"/>
-            <Navigation/>
-          </InnerDiv>
-        </Head>
-      );
-    }
+  constructor(props) {
+    super(props);
+    window.addEventListener('scroll', getCurrentScroll);
   }
-/*
-          <TextProfile>
-          ✉️ dlstjd0117@ajou.ac.kr<br/>
-          📞 010-2369-5186<br/>
-          🌍 <a target='_blank' href='https://github.com/Leeinseong' rel="noopener noreferrer" >https://github.com/Leeinseong</a>
-          </TextProfile>
 
-*/
+  componentWillUnmount(){
+    console.log("UNMOUNY");
+    window.removeEventListener('scroll', getCurrentScroll);
+  }
+
+  render() {
+    return (
+      <Head id="Header" >
+        <InnerDiv>
+          <ImgProfile id="LogoImg" src= "/img/IN.png"/>
+          <Navigation/>
+        </InnerDiv>
+      </Head>
+    );
+  }
+}
+
 const Head = styled.div`
   position: fixed;
   width: 100%;

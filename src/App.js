@@ -15,6 +15,12 @@ const GOLBAL_MEDIA_QURIES = {
 }
 
 class App extends Component {
+
+  constructor(props) {
+    super(props)
+    this.myRef = React.createRef()
+  }
+  
   render() {
     return (
         <Media queries={GOLBAL_MEDIA_QURIES}>
@@ -23,7 +29,7 @@ class App extends Component {
               <>
               {
                 matches.pc &&
-                <Layout>
+                <Layout id="Container">
                   <GlobalStyle/>
                   <PCHeader />
                   <Content>
@@ -47,12 +53,15 @@ class App extends Component {
             )
           }}
         </Media>
-
     );
   }
 }
 
 const GlobalStyle = createGlobalStyle`
+  html{
+    scroll-behavior:smooth;
+  }
+  
 	body {
 		padding: 0;
 		margin: 0;
@@ -78,8 +87,4 @@ const MobileContent = styled.div`
   margin: 0 0;
   width: 100%;
 `
-
-
-
-
 export default App;
