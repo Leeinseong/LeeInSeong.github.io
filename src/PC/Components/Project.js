@@ -19,7 +19,7 @@ class Project extends Component {
   
   render() {
     return (
-      <Container className="Project">
+      <Container id="Project">
         <InnerDiv>
           <MainTitle>Project</MainTitle>
           <SubContainer id="IS-Portfolio">

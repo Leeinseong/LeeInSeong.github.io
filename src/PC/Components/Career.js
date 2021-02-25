@@ -16,7 +16,7 @@ class Career extends Component {
 
   render() {
     return (
-      <Container className="Career">
+      <Container id="Career">
         <InnerDiv>
           <MainTitle>Career</MainTitle>
           <ul className="cbp_tmtimeline">

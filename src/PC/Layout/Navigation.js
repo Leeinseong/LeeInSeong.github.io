@@ -8,14 +8,19 @@ import './Css/Navigation.css';
 
 class PC_Navigation extends Component {
   
+  MoveScroll = (e) => {
+    var projectDiv = document.getElementById(e);
+    window.scrollTo(0, projectDiv.offsetTop);
+  }
+
   render() {
       return (
          <MenuDiv>
-						<MainMeu><a href="#">ABOUT</a></MainMeu>
-						<MainMeu><a href="#">CAREER</a></MainMeu>
-						<MainMeu><a href="#">PROJECT</a></MainMeu>
-						<MainMeu><a href="#">SKILL</a></MainMeu>
-						<MainMeu><a href="#">CONTACT</a></MainMeu>
+						<MenuButton onClick={() => this.MoveScroll("About")}>ABOUT</MenuButton>
+						<MenuButton onClick={() => this.MoveScroll("Career")}>CAREER</MenuButton>
+						<MenuButton onClick={() => this.MoveScroll("Project")}>PROJECT</MenuButton>
+						<MenuButton onClick={() => this.MoveScroll("Skill")}>SKILL</MenuButton>
+						<MenuButton onClick={() => this.MoveScroll("Contact")}>CONTACT</MenuButton>
 					</MenuDiv>
       );
     }
@@ -27,18 +32,25 @@ const MenuDiv = styled.div`
   right: 15px;
   transform: translateY(-50%);
   position: absolute;
-  `
-const MainMeu = styled.div`
+`
+const MenuButton = styled.button`
+  display: block;
+  padding: 20px 0;
+  font-size: 17px;
+  color: #402D1A;
+  font-weight: bold;
+  padding-left: 30px;
+  text-decoration: none;
+  vertical-align: baseline;
+  color: #666;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 
-display: block;
-padding: 20px 0;
-font-size: 17px;
-color: #402d1a;
-font-weight: bold;
-padding-left: 30px;
-text-decoration: none;
-vertical-align: baseline;
-color: #666;
+  &:focus{
+    outline:none;
+  }
+
 `
 
 export default PC_Navigation;

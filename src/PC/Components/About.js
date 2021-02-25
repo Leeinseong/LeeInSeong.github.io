@@ -4,7 +4,7 @@ import styled from 'styled-components';
 class About extends Component {
     render() {
         return (
-          <Container className="About">
+          <Container id="About">
             <InnerDiv>
               <MainTitle>ABOUT</MainTitle>
               <ContentDiv>

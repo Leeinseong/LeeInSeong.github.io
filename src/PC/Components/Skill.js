@@ -4,7 +4,7 @@ import styled from 'styled-components';
 class Skill extends Component {
     render() {
         return (
-          <Container className="Skill">
+          <Container id="Skill">
             <InnerDiv>
               <MainTitle>Skill</MainTitle>
               <h2>주스킬</h2>

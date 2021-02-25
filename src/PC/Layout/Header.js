@@ -9,12 +9,12 @@ const getCurrentScroll = () =>{
   if( window.scrollY >= 80){
     document.getElementById("Header").style.background="#FFFFFF";
     document.getElementById("Header").style.borderBottom="1px solid rgb(235, 235, 235)";
-    document.getElementById("LogoImg").style.display="block";  
+    document.getElementById("LogoButton").style.display="block";  
   }
   else{
     document.getElementById("Header").style.background="none";
     document.getElementById("Header").style.borderBottom="none";
-    document.getElementById("LogoImg").style.display="none";
+    document.getElementById("LogoButton").style.display="none";
   }
 }
 
@@ -25,15 +25,20 @@ class PC_Header extends Component {
   }
 
   componentWillUnmount(){
-    console.log("UNMOUNY");
     window.removeEventListener('scroll', getCurrentScroll);
+  }
+
+  goTop = (e) =>{
+    window.scrollTo(0, 0);
   }
 
   render() {
     return (
       <Head id="Header" >
         <InnerDiv>
-          <ImgProfile id="LogoImg" src= "/img/IN.png"/>
+          <ImgButton id="LogoButton" onClick={this.goTop}>
+            <ImgProfile src= "/img/IN.png"/>
+          </ImgButton>
           <Navigation/>
         </InnerDiv>
       </Head>
@@ -57,13 +62,24 @@ const InnerDiv = styled.div`
     padding: 0 10px;
   }
 `
- const ImgProfile = styled.img`
+const ImgButton = styled.button`
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border: none;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  background: transparent;
+  &:focus{
+    outline:none;
+  }
+`
+
+ const ImgProfile = styled.img`
   width: 50px;
   height: 50px;
-  display: none;
  `
 
 export default PC_Header;

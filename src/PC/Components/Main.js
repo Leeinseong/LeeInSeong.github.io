@@ -4,6 +4,7 @@ import About   from './About';
 import Career  from './Career';
 import Project from './Project';
 import Skill   from './Skill';
+import Contact   from './Contact';
 
 class Main extends Component {
 
@@ -21,6 +22,7 @@ class Main extends Component {
           <Career/>
           <Project/>
           <Skill/>
+          <Contact/>
           </>
         );
       }
