@@ -18,7 +18,6 @@ class MobileHeader extends Component {
 const Head = styled.div`
   top: 0px;
   width: 100%;
-  background: #FFF2CF url(/img/HeaderBackGround.png) repeat;
   text-align:center;
 `
  const ImgProfile = styled.img`

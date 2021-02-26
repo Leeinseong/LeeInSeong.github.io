@@ -111,14 +111,15 @@
     .cbp_tmtimeline>li .cbp_tmtime {
         width: 100%;
         position: relative;
-        padding: 0 0 20px 0
+        padding: 0 0px 20px 0px;
     }
     .cbp_tmtimeline>li .cbp_tmtime span {
-        text-align: left
+        text-align: left;
+        padding: 0 10px 0px 10px;
     }
     .cbp_tmtimeline>li .cbp_tmlabel {
-        margin: 0 0 30px 0;
-        padding: 1em;
+        margin: 0px 10px 30px 10px;
+        padding: 10px 10px 30px 10px;
         font-weight: 400;
         font-size: 95%
     }
@@ -133,7 +134,7 @@
         position: relative;
         float: right;
         left: auto;
-        margin: -64px 5px 0 0px
+        margin: -64px 10px 0px 0px;
     }
     .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after {
         border-right-color: transparent;

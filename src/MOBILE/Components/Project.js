@@ -2,29 +2,51 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 class Project extends Component {
-    render() {
-        return (
-          <Container className="Project">
-            <h1 className="ContentTitle" style={{marginBottom:"20px"}}>Project</h1>
-
-            <SubContainer id="IS-Portfolio"  className="IS-Portfolio">
-              <TitleDiv>프로젝트명</TitleDiv>
-              <ContentDiv>[개인] 개발자 포토폴리와 깃허브 페이지</ContentDiv>
+  ButtonClick = ( e ) => {
+    var head = document.getElementById( e +"-Header");
+    var detail = document.getElementById( e +"-Detail");
+    var button = document.getElementById( e +"-Button");
+    if(detail.style.display !== 'grid'){
+      head.style.borderBottom = "solid grey 0.5px";
+      detail.style.display = "grid";
+      button.src = "/img/BtnUp.png"
+    }else{
+      head.style.borderBottom = "";
+      detail.style.display = "none";
+      button.src = "/img/BtnDown.png"
+    }
+  }
+  
+  render() {
+    return (
+      <Container id="Project">
+        <InnerDiv>
+          <MainTitle>Project</MainTitle>
+          <SubContainer id="IS-Portfolio">
+            <ButtonContainer id="IS-Portfolio-Header" onClick={(e) => this.ButtonClick("IS-Portfolio")}>
+              <b>[개인] 개발자 포토폴리와 깃허브 페이지</b>
+              <ButtonImg id="IS-Portfolio-Button" src="/img/btnDown.png"></ButtonImg>
+            </ButtonContainer>
+            <DetailContainer id="IS-Portfolio-Detail">
               <TitleDiv>기간</TitleDiv>
               <ContentDiv>2021년 1월 ~ 2021년 2월</ContentDiv>
               <TitleDiv>개발환경</TitleDiv>
               <ContentDiv>ReactJS, JavaScript</ContentDiv>
               <TitleDiv>상세설명</TitleDiv>
               <ContentDiv>
-                ReactJS를 이용하여 구연한 개발자 Portfolio 반응형 웹페이지
+                ReactJS를 이용하여 구현한 개발자 Portfolio 반응형 웹페이지
               </ContentDiv>
               <TitleDiv>Git</TitleDiv>
-              <ContentDiv></ContentDiv>
-            </SubContainer>
+              <ContentDiv><a target="_blank" rel='noreferrer' href="https://github.com/Leeinseong/LeeInSeong.github.io">https://github.com/Leeinseong/LeeInSeong.github.io</a></ContentDiv>
+            </DetailContainer>
+          </SubContainer>
 
-            <SubContainer id="IS-Telegram" className="IS-Telegram">
-              <TitleDiv>프로젝트명</TitleDiv>
-              <ContentDiv>[개인] 가상화폐 거래(지갑/토큰) 분석 텔레그램 챗봇</ContentDiv>
+          <SubContainer id="IS-Telegram">
+            <ButtonContainer id="IS-Telegram-Header" onClick={(e) => this.ButtonClick("IS-Telegram")}>
+              <b>[개인]가상화폐 거래(지갑/토큰) 분석 텔레그램 챗봇</b>
+              <ButtonImg id="IS-Telegram-Button" src="/img/btnDown.png"></ButtonImg>
+            </ButtonContainer>
+            <DetailContainer id="IS-Telegram-Detail">
               <TitleDiv>기간</TitleDiv>
               <ContentDiv>2020년 5월 ~ NOW</ContentDiv>
               <TitleDiv>개발환경</TitleDiv>
@@ -36,12 +58,16 @@ class Project extends Component {
                 Etherscan API를 통해 지정한 특정 지갑 또는 코인의 이동을 분석하고 설정한 조건에 맞는 Transaction 정보를 Telegram ChatBot을 통해 실시간으로 알려주는 프로그램
               </ContentDiv>
               <TitleDiv>Git</TitleDiv>
-              <ContentDiv></ContentDiv>
-            </SubContainer>
+              <ContentDiv><a target="_blank" rel='noreferrer' href="https://github.com/Leeinseong/telegramAPI">https://github.com/Leeinseong/telegramAPI</a></ContentDiv>
+            </DetailContainer>
+          </SubContainer>
 
-            <SubContainer id="CNS-Lotte" className="CNS-Lotte">
-              <TitleDiv>프로젝트명</TitleDiv>
-              <ContentDiv>[신규/확산](LG CNS - 롯데마트)롯데마트 스마트/세미다크 스토어 (예약배송, 바로배송)</ContentDiv>
+          <SubContainer id="CNS-Lotte">
+            <ButtonContainer id="CNS-Lotte-Header" onClick={(e) => this.ButtonClick("CNS-Lotte")}>
+                <b>[신규/확산](LG CNS - 롯데마트)롯데마트 스마트/세미다크 스토어 (예약배송, 바로배송)</b>
+                <ButtonImg id="CNS-Lotte-Button" src="/img/btnDown.png"></ButtonImg>
+            </ButtonContainer>
+            <DetailContainer id="CNS-Lotte-Detail">
               <TitleDiv>기간</TitleDiv>
               <ContentDiv>2020년 8월 ~ NOW</ContentDiv>
               <TitleDiv>개발환경</TitleDiv>
@@ -50,10 +76,10 @@ class Project extends Component {
               <ContentDiv>Oracle, MSSQL</ContentDiv>
               <TitleDiv>상세설명</TitleDiv>
               <ContentDiv>
-                롯데마트의 스마트스토어(바로배송 + 예약배송 + 픽업)과 세미다크(예약배송 + 픽업)에서 피킹완료부터 출하장까지 분류를 자동화 시스템<br/><br/>
+                롯데마트의 스마트스토어(바로배송 + 예약배송 + 픽업)과 세미다크(예약배송 + 픽업)에서 피킹완료부터 출하장까지 분류를 자동화 시스템<br/>
                 *참조 <br/>
-                <a href="http://biz.newdaily.co.kr/site/data/html/2020/12/18/2020121800058.html">스마트스토어</a><br/>
-                <a href="https://www.mk.co.kr/news/business/view/2020/10/1108816">세미다크스토어</a>
+                스마트스토어 : <a href="http://biz.newdaily.co.kr/site/data/html/2020/12/18/2020121800058.html">http://biz.newdaily.co.kr/site/data/html/2020/12/18/2020121800058.html</a><br/>
+                세미다크스토어 : <a href="https://www.mk.co.kr/news/business/view/2020/10/1108816">https://www.mk.co.kr/news/business/view/2020/10/1108816</a>
               </ContentDiv>
               <TitleDiv>역할</TitleDiv>
               <ContentDiv>
@@ -62,11 +88,15 @@ class Project extends Component {
                 패킹완료 및 검수 데이터를 상위 시스템으로 전송을 위한 Batch 프로그램 개발 <br/>
                 WCS 프로그램 배포를 위한 Setup 프로그램 및 업데이트 버전 관리
                 </ContentDiv>
-            </SubContainer>
-            
-            <SubContainer id="CNS-Coupang" className="CNS-Coupang">
-              <TitleDiv>프로젝트명</TitleDiv>
-              <ContentDiv>[신규/개선](LG CNS - 쿠팡) 쿠팡 신선 및 일반 배송/물류 배송 시스템(부천1, 부천2, 고양)</ContentDiv>
+            </DetailContainer>
+          </SubContainer>
+          
+          <SubContainer id="CNS-Coupang">
+            <ButtonContainer id="CNS-Coupang-Header" onClick={(e) => this.ButtonClick("CNS-Coupang")}>
+                <b>[신규/개선](LG CNS - 쿠팡) 쿠팡 신선 및 일반 배송/물류 배송 시스템(부천1, 부천2, 고양)</b>
+                <ButtonImg id="CNS-Coupang-Button" src="/img/btnDown.png"></ButtonImg>
+            </ButtonContainer>
+            <DetailContainer id="CNS-Coupang-Detail">
               <TitleDiv>기간</TitleDiv>
               <ContentDiv>2020년 2월 ~ 2020년 8월</ContentDiv>
               <TitleDiv>개발환경</TitleDiv>
@@ -80,11 +110,15 @@ class Project extends Component {
                 설비(PLC)와 소켓통신을 통해 바코드 정보와 슈트, 상품종류등을 통신하는 ECS 서버 개발 <br/> 
                 설비장비들(인덕션, 컨베이어, 휠, 슈트, 라벨프린터등...)의 상태와 정보들을 받아 사용자에게 실시간으로 보여주는 SCADA 프로그램 개발 <br/>
               </ContentDiv>
-            </SubContainer>
-            
-            <SubContainer id="ITM-Brandmall" className="ITM-Brandmall">
-              <TitleDiv>프로젝트명</TitleDiv>
-              <ContentDiv>[신규](GS ITM - LFMALL) 브랜드몰 구축(마에스트로, 헤지스, 블루라운지, 라푸마)</ContentDiv>
+            </DetailContainer>
+          </SubContainer>
+          
+          <SubContainer id="ITM-Brandmall">
+            <ButtonContainer id="ITM-Brandmall-Header" onClick={(e) => this.ButtonClick("ITM-Brandmall")}>
+                <b>[신규](GS ITM - LFMALL) 브랜드몰 구축(마에스트로, 헤지스, 블루라운지, 라푸마)</b>
+                <ButtonImg id="ITM-Brandmall-Button" src="/img/btnDown.png"></ButtonImg>
+            </ButtonContainer>
+            <DetailContainer id="ITM-Brandmall-Detail">
               <TitleDiv>기간</TitleDiv>
               <ContentDiv>2019년 5월 ~ 2019년 12월</ContentDiv>
               <TitleDiv>개발환경</TitleDiv>
@@ -102,11 +136,15 @@ class Project extends Component {
                 MAESTRO, BLUEROUNGE : ADMIN, PWEB 사이트 구축                                          <br/>
                 HAZZYS, LAFUMA : ADMIN, MWEB 사이트 구축                                           <br/>
               </ContentDiv>
-            </SubContainer>
-            
-            <SubContainer id="ITM-NBOS" className="ITM-NBOS">
-              <TitleDiv>프로젝트명</TitleDiv>
-              <ContentDiv>[구조개선](GS ITM - LFMALL) SBOS LFMall 어드민 구조개선</ContentDiv>
+            </DetailContainer>
+          </SubContainer>
+          
+          <SubContainer id="ITM-NBOS">
+            <ButtonContainer id="ITM-NBOS-Header" onClick={(e) => this.ButtonClick("ITM-NBOS")}>
+                <b>[구조개선](GS ITM - LFMALL) SBOS LFMall 어드민 구조개선</b>
+                <ButtonImg id="ITM-NBOS-Button" src="/img/btnDown.png"></ButtonImg>
+            </ButtonContainer>
+            <DetailContainer id="ITM-NBOS-Detail">
               <TitleDiv>기간</TitleDiv>
               <ContentDiv>2018년 07월 ~ 2019년 05월</ContentDiv>
               <TitleDiv>개발환경</TitleDiv>
@@ -130,11 +168,15 @@ class Project extends Component {
                 기존 DB Query의 내부 Query 및 속도 개선                                               <br/>
                 기존 DB의 프로시저를 정리하여 가능한 부분을 JAVA로 전환                                 <br/>
               </ContentDiv>
-            </SubContainer>
+            </DetailContainer>
+          </SubContainer>
 
-            <SubContainer id="S&AT-Messenger" className="S&AT-Messenger">
-              <TitleDiv>프로젝트명</TitleDiv>
-              <ContentDiv>[신규](S&AT) SMART CITY 프로젝트의 메신저 프로그램 개발</ContentDiv>
+          <SubContainer id="S&AT-Messenger">
+            <ButtonContainer id="S&AT-Messenger-Header" onClick={(e) => this.ButtonClick("S&AT-Messenger")}>
+                <b>[신규](S&AT) SMART CITY 프로젝트의 메신저 프로그램 개발</b>
+                <ButtonImg id="S&AT-Messenger-Button" src="/img/btnDown.png"></ButtonImg>
+            </ButtonContainer>
+            <DetailContainer id="S&AT-Messenger-Detail">
               <TitleDiv>기간</TitleDiv>
               <ContentDiv>2017년 12월 ~ 2018년 02월</ContentDiv>
               <TitleDiv>개발환경</TitleDiv>
@@ -150,11 +192,15 @@ class Project extends Component {
                 C++과 QML을 이용한 메신저 프로그램 개발<br/>
                 사용자 메시지와 ROUTE KEY, 친구목록을 저장할 DATABASE 설계<br/>
               </ContentDiv>
-            </SubContainer>
+            </DetailContainer>
+          </SubContainer>
 
-            <SubContainer id="IS-NFC" className="IS-NFC">
-              <TitleDiv>프로젝트명</TitleDiv>
-              <ContentDiv>[개인] NFC 태그를 통한 셀프 주문 시스템</ContentDiv>
+          <SubContainer id="IS-NFC">
+          <ButtonContainer id="IS-NFC-Header" onClick={(e) => this.ButtonClick("IS-NFC")}>
+                <b>[개인] NFC 태그를 통한 셀프 주문 시스템</b>
+                <ButtonImg id="IS-NFC-Button" src="/img/btnDown.png"></ButtonImg>
+            </ButtonContainer>
+            <DetailContainer id="IS-NFC-Detail">
               <TitleDiv>기간</TitleDiv>
               <ContentDiv>2017년 09월 ~ 2017년 12월</ContentDiv>
               <TitleDiv>개발환경</TitleDiv>
@@ -171,39 +217,67 @@ class Project extends Component {
                 Oracle과 Firebase db의 동시 사용을 위한 쓰레드와 플래그를 통한 순서별 처리<br/>
                 사용자 정보와 주문 정보를 ORACLE에 저장하여 솔루션을 위한 데이터 축척<br/>
               </ContentDiv>
-            </SubContainer>
-          </Container>
-        );
-      }
-    }
+            </DetailContainer>
+          </SubContainer>
+        </InnerDiv>
+      </Container>
+    );
+  }
+}
     
 const Container = styled.div`
+  padding-top: 10px;
+  padding-bottom: 80px;
   height:Auto;
-  padding: 20px 20px 20px 30px;
   background: #F3F3F3;
 `
+const InnerDiv = styled.div`
+  height: Auto;
+  width: 100%;
+`
+const MainTitle = styled.h1`
+  margin: 30px 0px;
+  font-size: 80px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Titillium Web', sans-serif;
+  color: #3b310f;
 
+  @media only screen and (max-width: 1280px) {
+    padding-left: 20px;
+  }
+`
 const SubContainer = styled.div`
-  display:grid;
-  grid-template-columns: auto;
-  grid-gap : 0;
   border : solid;
+  margin-bottom: 15px;
   background: #FFFFFF;
-  margin-bottom: 15px; 
+`
+const ButtonContainer = styled.div`
+  padding: 10px;
+`
+const ButtonImg = styled.img`
+  width: 30px;
+  vertical-align: middle;
+  float: right;
 `
 
+const DetailContainer = styled.div`
+  display:grid;
+  grid-template-columns: 150px auto;
+  grid-gap : 0;
+  display: none;
+`
 const TitleDiv = styled.div`
   padding: 10px 10px 10px 10px;
   border-right: solid grey 0.5px;
   border-bottom: solid grey 0.5px;
-  font-size:15px;
-  font-weight: bold;
+  &:nth-last-child(2){
+    border-bottom: 0px;
+  }
 `
-
 const ContentDiv = styled.div`
   padding: 10px;
   border-bottom: solid grey 0.5px;
-  font-size:15px;
   &:nth-last-child(1){
     border-bottom: 0px;
   }

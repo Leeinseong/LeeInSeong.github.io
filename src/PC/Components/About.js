@@ -17,7 +17,7 @@ class About extends Component {
                     <b>2020/01 ~ Now &nbsp;&nbsp;&nbsp;&nbsp;</b> LG CNS 스마트F&C 스마트물류담당 스마트물류솔루션팀<br/>
                   </DetailAbout>
                   
-                  <TitleAbout>사용스킬</TitleAbout>
+                  <TitleAbout>스킬</TitleAbout>
                   <DetailAbout>
                     C, C#, JAVA, SPRING, ORACLE <br/>
                     REACTJS, IIS, MSSQL

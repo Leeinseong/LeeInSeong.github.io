@@ -48,18 +48,19 @@ const TextP2 = styled.p`
   font-family: 'Titillium Web', sans-serif;
   margin: 0;
 `
-
 const TextP3 = styled.p`
-font-size: 15px;
-line-height: 1.5;
-color: #54450e;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #54450e;
   font-family: 'Titillium Web', sans-serif;
+  margin: 5px 0px;
 `
 const TextP4 = styled.p`
   font-size: 15px;
   line-height: 1.5;
   color: #D5D5D5;
   font-family: 'Titillium Web', sans-serif;
+  margin: 5px 0px;
 `
 
 export default Portfolio;

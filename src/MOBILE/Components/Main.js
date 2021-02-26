@@ -21,7 +21,6 @@ class Main extends Component {
           <About/>
           <Career/>
           <Project/>
-          <Skill/>
           </>
         );
       }
