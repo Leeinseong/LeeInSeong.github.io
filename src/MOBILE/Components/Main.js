@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
+import Portfolio   from './Portfolio';
 import About   from './About';
 import Career  from './Career';
 import Project from './Project';
 import Skill   from './Skill';
 
 import './Css/Main.css';
-
-//openweathermap 에서 현재 날씨 정보를 받아올 API키
-const API_KEY = '5ad02c2c30d88798b28e377aca3f9bfd';
 
 class Main extends Component {
   
@@ -19,7 +17,11 @@ class Main extends Component {
     render() {
         return (
           <>
+          <Portfolio/>
           <About/>
+          <Career/>
+          <Project/>
+          <Skill/>
           </>
         );
       }

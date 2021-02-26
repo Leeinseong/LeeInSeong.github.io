@@ -20,7 +20,7 @@ class Contact extends Component {
             <InnerDiv>
               <MainTitle>CONTACT</MainTitle>
               <ContentDiv>
-              <h2 style={{textAlign:'center', marginTop:"10px"}}>이인성(Lee InSeong)</h2> <br/>
+              <h1 style={{marginTop:"10px"}}>이인성(Lee InSeong)</h1>
               ✉️ dlstjd0117@ajou.ac.kr<br/>
               📞 010-2369-5186<br/>
               🌍 <a target='_blank' href='https://github.com/Leeinseong' rel="noopener noreferrer" >https://github.com/Leeinseong</a>
@@ -61,6 +61,8 @@ const MainTitle = styled.h1`
 `
 const ContentDiv = styled.div`
   width: Auto;
+  font-size:20px;
+  margin-left:30px;
 `
 
 export default Contact;
