@@ -27,6 +27,7 @@ const InnerDiv = styled.div`
   width: 100%;
   height: auto;
   margin-bottom: 20px;
+  text-align:center;
 `
 const InImg = styled.img`
   width: 100%;

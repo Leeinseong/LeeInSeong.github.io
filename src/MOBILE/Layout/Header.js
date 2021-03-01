@@ -5,24 +5,48 @@ import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 
 class MobileHeader extends Component {
-    render() {
-//      window.removeEventListener('scroll', getCurrentScroll, );
-      return (
-        <Head id="Header">
-          <Navigation/>
-        </Head>
+  goTop = (e) =>{
+    window.scrollTo(0, 0);
+  }
+  render() {
+    return (
+      <Head id="Header">
+        <ImgButton id="LogoButton" onClick={this.goTop}>
+          <ImgProfile src= "/img/IN.png"/>
+        </ImgButton>
+        <ImgButton id="LogoButton" onClick={this.goTop} style={{right:"15px"}}>
+          <ImgProfile src= "/img/IN.png"/>
+        </ImgButton>
+        <Navigation/>
+      </Head>
       );
     }
   }
 
 const Head = styled.div`
-  top: 0px;
+  position: fixed;
   width: 100%;
-  text-align:center;
+  height: 30px;
+  background: #A4B9C6;
+  z-index:10;
+`
+const ImgButton = styled.button`
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  &:focus{
+    outline:none;
+  }
 `
  const ImgProfile = styled.img`
-  width: 15em;
-  height: 15em;
+  width: 20px;
+  height: 20px;
  `
 const TextProfile = styled.div`
   margin-top: -10px;

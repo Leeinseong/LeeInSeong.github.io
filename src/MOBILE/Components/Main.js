@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import Portfolio   from './Portfolio';
 import About   from './About';
 import Career  from './Career';
@@ -17,16 +18,18 @@ class Main extends Component {
   
     render() {
         return (
-          <>
-          <Portfolio/>
-          <About/>
-          <Career/>
-          <Project/>
-          <Skill/>
-          <Contact/>
-          </>
+          <Container>
+            <Portfolio/>
+            <About/>
+            <Career/>
+            <Project/>
+            <Skill/>
+            <Contact/>
+          </Container>
         );
       }
     }
-    
+  const Container = styled.div`
+    padding-top: 30px;
+  `
   export default Main;
