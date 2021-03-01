@@ -6,9 +6,9 @@ class Project extends Component {
     var head = document.getElementById( e +"-Header");
     var detail = document.getElementById( e +"-Detail");
     var button = document.getElementById( e +"-Button");
-    if(detail.style.display !== 'grid'){
+    if(detail.style.display !== 'block'){
       head.style.borderBottom = "solid grey 0.5px";
-      detail.style.display = "grid";
+      detail.style.display = "block";
       button.src = "/img/BtnUp.png"
     }else{
       head.style.borderBottom = "";
@@ -37,7 +37,7 @@ class Project extends Component {
                 ReactJS를 이용하여 구현한 개발자 Portfolio 반응형 웹페이지
               </ContentDiv>
               <TitleDiv>Git</TitleDiv>
-              <ContentDiv><a target="_blank" rel='noreferrer' href="https://github.com/Leeinseong/LeeInSeong.github.io">https://github.com/Leeinseong/LeeInSeong.github.io</a></ContentDiv>
+              <ContentDiv><a target="_blank" rel='noreferrer' href="https://github.com/Leeinseong/LeeInSeong.github.io" style={{wordBreak:"break-all"}}>https://github.com/Leeinseong/LeeInSeong.github.io</a></ContentDiv>
             </DetailContainer>
           </SubContainer>
 
@@ -58,7 +58,7 @@ class Project extends Component {
                 Etherscan API를 통해 지정한 특정 지갑 또는 코인의 이동을 분석하고 설정한 조건에 맞는 Transaction 정보를 Telegram ChatBot을 통해 실시간으로 알려주는 프로그램
               </ContentDiv>
               <TitleDiv>Git</TitleDiv>
-              <ContentDiv><a target="_blank" rel='noreferrer' href="https://github.com/Leeinseong/telegramAPI">https://github.com/Leeinseong/telegramAPI</a></ContentDiv>
+              <ContentDiv><a target="_blank" rel='noreferrer' href="https://github.com/Leeinseong/telegramAPI" style={{wordBreak:"break-all"}}>https://github.com/Leeinseong/telegramAPI</a></ContentDiv>
             </DetailContainer>
           </SubContainer>
 
@@ -78,8 +78,8 @@ class Project extends Component {
               <ContentDiv>
                 롯데마트의 스마트스토어(바로배송 + 예약배송 + 픽업)과 세미다크(예약배송 + 픽업)에서 피킹완료부터 출하장까지 분류를 자동화 시스템<br/>
                 *참조 <br/>
-                스마트스토어 : <a href="http://biz.newdaily.co.kr/site/data/html/2020/12/18/2020121800058.html">http://biz.newdaily.co.kr/site/data/html/2020/12/18/2020121800058.html</a><br/>
-                세미다크스토어 : <a href="https://www.mk.co.kr/news/business/view/2020/10/1108816">https://www.mk.co.kr/news/business/view/2020/10/1108816</a>
+                스마트스토어 : <a href="http://biz.newdaily.co.kr/site/data/html/2020/12/18/2020121800058.html" style={{wordBreak:"break-all"}}>http://biz.newdaily.co.kr/site/data/html/2020/12/18/2020121800058.html</a><br/>
+                세미다크스토어 : <a href="https://www.mk.co.kr/news/business/view/2020/10/1108816" style={{wordBreak:"break-all"}}>https://www.mk.co.kr/news/business/view/2020/10/1108816</a>
               </ContentDiv>
               <TitleDiv>역할</TitleDiv>
               <ContentDiv>
@@ -196,7 +196,7 @@ class Project extends Component {
           </SubContainer>
 
           <SubContainer id="IS-NFC">
-          <ButtonContainer id="IS-NFC-Header" onClick={(e) => this.ButtonClick("IS-NFC")}>
+            <ButtonContainer id="IS-NFC-Header" onClick={(e) => this.ButtonClick("IS-NFC")}>
                 <b>[개인] NFC 태그를 통한 셀프 주문 시스템</b>
                 <ButtonImg id="IS-NFC-Button" src="/img/btnDown.png"></ButtonImg>
             </ButtonContainer>
@@ -227,7 +227,7 @@ class Project extends Component {
     
 const Container = styled.div`
   padding-top: 10px;
-  padding-bottom: 80px;
+  padding-bottom: 30px;
   height:Auto;
   background: #F3F3F3;
 `
@@ -236,16 +236,12 @@ const InnerDiv = styled.div`
   width: 100%;
 `
 const MainTitle = styled.h1`
-  margin: 30px 0px;
+  margin: 20px 0px;
   font-size: 80px;
   font-weight: bold;
   font-style: italic;
   font-family: 'Titillium Web', sans-serif;
   color: #3b310f;
-
-  @media only screen and (max-width: 1280px) {
-    padding-left: 20px;
-  }
 `
 const SubContainer = styled.div`
   border : solid;
@@ -253,27 +249,27 @@ const SubContainer = styled.div`
   background: #FFFFFF;
 `
 const ButtonContainer = styled.div`
+  position: relative;
   padding: 10px;
+  font-size: 18px;
 `
 const ButtonImg = styled.img`
+  position: absolute;
   width: 30px;
   vertical-align: middle;
   float: right;
+  display:none;
 `
 
 const DetailContainer = styled.div`
-  display:grid;
-  grid-template-columns: 150px auto;
-  grid-gap : 0;
   display: none;
+  grid-template-columns: auto;
+  grid-gap : 0;
 `
 const TitleDiv = styled.div`
   padding: 10px 10px 10px 10px;
   border-right: solid grey 0.5px;
   border-bottom: solid grey 0.5px;
-  &:nth-last-child(2){
-    border-bottom: 0px;
-  }
 `
 const ContentDiv = styled.div`
   padding: 10px;

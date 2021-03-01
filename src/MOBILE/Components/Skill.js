@@ -3,9 +3,10 @@ import styled from 'styled-components';
 
 class Skill extends Component {
     render() {
-        return (
-          <Container className="Skill">
-            <h1 className="ContentTitle">Skill</h1>
+      return (
+        <Container id="Skill">
+          <InnerDiv>
+            <MainTitle>Skill</MainTitle>
             <h2>주스킬</h2>
             <LanguageImg src= "/img/C.jpg"></LanguageImg>
             <LanguageImg src= "/img/C-SHARP.png"></LanguageImg>
@@ -18,19 +19,31 @@ class Skill extends Component {
             <LanguageImg src= "/img/IIS.png"></LanguageImg>
             <LanguageImg src= "/img/JAVASCRIPT.png"></LanguageImg>
             <LanguageImg src= "/img/ANDROID.png"></LanguageImg>
-          </Container>
-        );
-      }
+          </InnerDiv>
+        </Container>
+      );
     }
+  }
     
        
 const Container = styled.div`
+  padding-top: 10px;
+  padding-bottom: 30px;
   height:Auto;
-  padding: 20px 30px 30px 30px;
-  margin-bottom:20px;
 `
-
+const InnerDiv = styled.div`
+  height: Auto;
+  width: 100%;
+  margin: 0 auto;
+`
+const MainTitle = styled.h1`
+  margin: 30px 0px;
+  font-size: 80px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Titillium Web', sans-serif;
+`
 const LanguageImg = styled.img`
-  height:50px;
+  height: 70px;
 `
   export default Skill;
