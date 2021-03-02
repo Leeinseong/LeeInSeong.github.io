@@ -6,79 +6,103 @@ import { Link } from 'react-router-dom';
 
 import './Css/Navigation.css';
 
-class PC_Navigation extends Component {
-  
-    constructor(props) {
-      super(props);
+class MobileNavigation extends Component {
+  MoveScroll = (e) => {
+    var projectDiv = document.getElementById(e);
+    var menuDiv = document.getElementById("MenuDiv");
+    menuDiv.style.display = "none";
+    window.scrollTo(0, projectDiv.offsetTop);
+  }
 
-      this.state = {
-        properties: [
-          {
-            key: "About",
-            label: "About",
-          },
-          {
-            key: "Career",
-            label: "Career",
-          },
-          {
-            key: "Project",
-            label: "Projects",
-            nodes: [
-              {
-                key: "IS-Telegram",
-                label: "개인-텔레그램 챗봇"
-              },
-              {
-                key: "CNS-Lotte",
-                label: "LG-롯데 스마트/세미다크"
-              },
-              {
-                key: "CNS-Coupang",
-                label: "LG-쿠팡 물류센터"
-              },
-              {
-                key: "ITM-Brandmall",
-                label: "GS-LF몰 브랜드몰"
-              },
-              {
-                key: "ITM-NBOS",
-                label: "GS-NBOS 구조개선"
-              },
-              {
-                key: "S&AT-Messenger",
-                label: "S&AT-메신저 프로그램"
-              },
-              {
-                key: "IS-NFC",
-                label: "개인-NFC태그 주문결제"
-              }
-            ]
-          },
-          {
-            key: "Skill",
-            label: "Skill",
-          }
-        ],
-        initiallyOpenProperties: []
-      };
-    }
+  Close = (e) =>{
+    var menuDiv = document.getElementById("MenuDiv");
+    menuDiv.style.display = "none";
+  }
 
     render() {
       return (
-        <div style={{display:"none"}}>
-          <TreeMenu
-            data={this.state.properties}
-            initialOpenNodes={this.state.initiallyOpenProperties}
-            hasSearch={false}
-            onClickItem={({ key, label, ...props }) => {
-              if(props.level == "1") key =  key.split("/" )[1]
-              document.getElementsByClassName(key)[0].scrollIntoView();
-            }}
-          />
-        </div>
+        <Container id="MenuDiv">
+          <BackDiv onClick = {this.Close}/>
+          <InnerDiv>
+            <MenuHeader>MENU</MenuHeader>
+            <ImgButton id="LogoButton" onClick={this.goTop}>
+              <ImgClose src= "/img/IN.png"/>
+            </ImgButton>
+            <MenuButton onClick={() => this.MoveScroll("About")}>ABOUT</MenuButton>
+            <MenuButton onClick={() => this.MoveScroll("Career")}>CAREER</MenuButton>
+            <MenuButton onClick={() => this.MoveScroll("Project")}>PROJECT</MenuButton>
+            <MenuButton onClick={() => this.MoveScroll("Skill")}>SKILL</MenuButton>
+            <MenuButton onClick={() => this.MoveScroll("Contact")}>CONTACT</MenuButton>
+          </InnerDiv>
+        </Container>
       );
     }
   }
+
+ const Container = styled.div`
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+ `
+ const BackDiv = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #575757;
+  opacity: 80%;
+ `
+ const InnerDiv = styled.div`
+  position: fixed;
+  right: 0px;
+  width: 70%;
+  height: 100%;
+  background: #ffffff;
+  opacity: 100%;
+ `
+ const MenuHeader = styled.div`
+  width: 100%;
+  background: #A4B9C6;
+  color: #fff;
+  font-size: 34px;
+  padding: 15px 33px !important;
+ `
+ const ImgButton = styled.button`
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   cursor: pointer;
+   border: none;
+   top: 0px;
+   right: 0px;
+   transform: translateY(-50%);
+   background: transparent;
+   &:focus{
+     outline:none;
+   }
+ `
+ const ImgClose = styled.img`
+  width: 20px;
+  height: 20px;
+ `
+ const MenuButton = styled.button`
+   display: block;
+   padding: 20px 0;
+   font-size: 17px;
+   color: #402D1A;
+   font-weight: bold;
+   padding-left: 30px;
+   text-decoration: none;
+   vertical-align: baseline;
+   color: #666;
+   background: transparent;
+   border: none;
+   cursor: pointer;
+ 
+   &:focus{
+     outline:none;
+   }
+ 
+ `
   
-export default PC_Navigation;
+export default MobileNavigation;

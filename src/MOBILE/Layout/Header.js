@@ -2,12 +2,18 @@
 import React, {Component} from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Navigation from './Navigation';
+import MobileNavigation from './Navigation';
 
 class MobileHeader extends Component {
   goTop = (e) =>{
     window.scrollTo(0, 0);
   }
+
+  meneuOpen = (e) =>{
+    var menuDiv = document.getElementById("MenuDiv");
+    menuDiv.style.display = "block";
+  }
+
   render() {
     return (
       <Head id="Header">
@@ -15,9 +21,9 @@ class MobileHeader extends Component {
           <ImgProfile src= "/img/IN.png"/>
         </ImgButton>
         <ImgButton id="LogoButton" onClick={this.goTop} style={{right:"15px"}}>
-          <ImgProfile src= "/img/IN.png"/>
+          <ImgProfile src= "/img/Menu_Mobile.png" onClick={this.meneuOpen}/>
         </ImgButton>
-        <Navigation/>
+        <MobileNavigation/>
       </Head>
       );
     }
