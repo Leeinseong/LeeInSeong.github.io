@@ -44,6 +44,7 @@ class MobileNavigation extends Component {
   width: 100vw;
   height: 100vh;
   z-index: 20;
+  display:none;
  `
  const BackDiv = styled.div`
   position: fixed;
