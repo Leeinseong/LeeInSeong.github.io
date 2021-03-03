@@ -25,8 +25,8 @@ class MobileNavigation extends Component {
           <BackDiv onClick = {this.Close}/>
           <InnerDiv>
             <MenuHeader>MENU</MenuHeader>
-            <ImgButton id="LogoButton" onClick={this.goTop}>
-              <ImgClose src= "/img/IN.png"/>
+            <ImgButton onClick={this.Close}>
+              <ImgClose src= "/img/Close.png"/>
             </ImgButton>
             <MenuButton onClick={() => this.MoveScroll("About")}>ABOUT</MenuButton>
             <MenuButton onClick={() => this.MoveScroll("Career")}>CAREER</MenuButton>
@@ -69,21 +69,21 @@ class MobileNavigation extends Component {
  `
  const ImgButton = styled.button`
    position: absolute;
-   width: 20px;
-   height: 20px;
+   width: 50px;
+   height: 50px;
    cursor: pointer;
    border: none;
    top: 0px;
-   right: 0px;
-   transform: translateY(-50%);
+   right: 5px;
    background: transparent;
+
    &:focus{
      outline:none;
    }
  `
  const ImgClose = styled.img`
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
  `
  const MenuButton = styled.button`
    display: block;
