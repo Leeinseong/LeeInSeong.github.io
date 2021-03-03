@@ -52,7 +52,7 @@ class Career extends Component {
                       <TitleCareer>LG CNS 스마트F&C사업부 스마트물류담당 스마트물류솔루션팀</TitleCareer>
                       <DetailCareer>
                         <b>관련 프로젝트</b><br/>
-                        <ProjectButton onClick={() => this.MoveScroll("CNS-Lotter")}>롯데마트 스마트스토어/다크스토어 구축 및 확산 프로젝트</ProjectButton><br/>
+                        <ProjectButton onClick={() => this.MoveScroll("CNS-Lotte")}>롯데마트 스마트스토어/다크스토어 구축 및 확산 프로젝트</ProjectButton><br/>
                         <ProjectButton onClick={() => this.MoveScroll("CNS-Coupang")}>쿠팡 물류센터 쿠팡배송 프로젝트</ProjectButton><br/>
                       </DetailCareer>
                   </div>
