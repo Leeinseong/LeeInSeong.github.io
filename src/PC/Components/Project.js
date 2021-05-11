@@ -25,7 +25,7 @@ class Project extends Component {
           <SubContainer id="IS-Portfolio">
             <ButtonContainer id="IS-Portfolio-Header" onClick={(e) => this.ButtonClick("IS-Portfolio")}>
               <b>[개인] 개발자 포토폴리와 깃허브 페이지</b>
-              <ButtonImg id="IS-Portfolio-Button" src="/img/btnDown.png"></ButtonImg>
+              <ButtonImg id="IS-Portfolio-Button" src="/img/BtnDown.png"></ButtonImg>
             </ButtonContainer>
             <DetailContainer id="IS-Portfolio-Detail">
               <TitleDiv>기간</TitleDiv>
@@ -44,7 +44,7 @@ class Project extends Component {
           <SubContainer id="IS-Telegram">
             <ButtonContainer id="IS-Telegram-Header" onClick={(e) => this.ButtonClick("IS-Telegram")}>
               <b>[개인]가상화폐 거래(지갑/토큰) 분석 텔레그램 챗봇</b>
-              <ButtonImg id="IS-Telegram-Button" src="/img/btnDown.png"></ButtonImg>
+              <ButtonImg id="IS-Telegram-Button" src="/img/BtnDown.png"></ButtonImg>
             </ButtonContainer>
             <DetailContainer id="IS-Telegram-Detail">
               <TitleDiv>기간</TitleDiv>
@@ -65,7 +65,7 @@ class Project extends Component {
           <SubContainer id="CNS-Lotte">
             <ButtonContainer id="CNS-Lotte-Header" onClick={(e) => this.ButtonClick("CNS-Lotte")}>
                 <b>[신규/확산](LG CNS - 롯데마트)롯데마트 스마트/세미다크 스토어 (예약배송, 바로배송)</b>
-                <ButtonImg id="CNS-Lotte-Button" src="/img/btnDown.png"></ButtonImg>
+                <ButtonImg id="CNS-Lotte-Button" src="/img/BtnDown.png"></ButtonImg>
             </ButtonContainer>
             <DetailContainer id="CNS-Lotte-Detail">
               <TitleDiv>기간</TitleDiv>
@@ -94,7 +94,7 @@ class Project extends Component {
           <SubContainer id="CNS-Coupang">
             <ButtonContainer id="CNS-Coupang-Header" onClick={(e) => this.ButtonClick("CNS-Coupang")}>
                 <b>[신규/개선](LG CNS - 쿠팡) 쿠팡 신선 및 일반 배송/물류 배송 시스템(부천1, 부천2, 고양)</b>
-                <ButtonImg id="CNS-Coupang-Button" src="/img/btnDown.png"></ButtonImg>
+                <ButtonImg id="CNS-Coupang-Button" src="/img/BtnDown.png"></ButtonImg>
             </ButtonContainer>
             <DetailContainer id="CNS-Coupang-Detail">
               <TitleDiv>기간</TitleDiv>
@@ -116,7 +116,7 @@ class Project extends Component {
           <SubContainer id="ITM-Brandmall">
             <ButtonContainer id="ITM-Brandmall-Header" onClick={(e) => this.ButtonClick("ITM-Brandmall")}>
                 <b>[신규](GS ITM - LFMALL) 브랜드몰 구축(마에스트로, 헤지스, 블루라운지, 라푸마)</b>
-                <ButtonImg id="ITM-Brandmall-Button" src="/img/btnDown.png"></ButtonImg>
+                <ButtonImg id="ITM-Brandmall-Button" src="/img/BtnDown.png"></ButtonImg>
             </ButtonContainer>
             <DetailContainer id="ITM-Brandmall-Detail">
               <TitleDiv>기간</TitleDiv>
@@ -142,7 +142,7 @@ class Project extends Component {
           <SubContainer id="ITM-NBOS">
             <ButtonContainer id="ITM-NBOS-Header" onClick={(e) => this.ButtonClick("ITM-NBOS")}>
                 <b>[구조개선](GS ITM - LFMALL) SBOS LFMall 어드민 구조개선</b>
-                <ButtonImg id="ITM-NBOS-Button" src="/img/btnDown.png"></ButtonImg>
+                <ButtonImg id="ITM-NBOS-Button" src="/img/BtnDown.png"></ButtonImg>
             </ButtonContainer>
             <DetailContainer id="ITM-NBOS-Detail">
               <TitleDiv>기간</TitleDiv>
@@ -174,7 +174,7 @@ class Project extends Component {
           <SubContainer id="S&AT-Messenger">
             <ButtonContainer id="S&AT-Messenger-Header" onClick={(e) => this.ButtonClick("S&AT-Messenger")}>
                 <b>[신규](S&AT) SMART CITY 프로젝트의 메신저 프로그램 개발</b>
-                <ButtonImg id="S&AT-Messenger-Button" src="/img/btnDown.png"></ButtonImg>
+                <ButtonImg id="S&AT-Messenger-Button" src="/img/BtnDown.png"></ButtonImg>
             </ButtonContainer>
             <DetailContainer id="S&AT-Messenger-Detail">
               <TitleDiv>기간</TitleDiv>
@@ -198,7 +198,7 @@ class Project extends Component {
           <SubContainer id="IS-NFC">
           <ButtonContainer id="IS-NFC-Header" onClick={(e) => this.ButtonClick("IS-NFC")}>
                 <b>[개인] NFC 태그를 통한 셀프 주문 시스템</b>
-                <ButtonImg id="IS-NFC-Button" src="/img/btnDown.png"></ButtonImg>
+                <ButtonImg id="IS-NFC-Button" src="/img/BtnDown.png"></ButtonImg>
             </ButtonContainer>
             <DetailContainer id="IS-NFC-Detail">
               <TitleDiv>기간</TitleDiv>
