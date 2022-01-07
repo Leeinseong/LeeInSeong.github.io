@@ -59,11 +59,10 @@ class Career extends Component {
                   <div className="cbp_tmtime" ><span>2021/06</span> <span>~Now</span></div>
                   <div className="cbp_tmicon bg-green"> <i className="zmdi zmdi-case"></i></div>
                   <div className="cbp_tmlabel">
-                      <TitleCareer>Tier.J 구독 플랫폼 다독</TitleCareer>
+                      <TitleCareer>Tier.J 구독 플랫폼 개발팀</TitleCareer>
                       <DetailCareer>
                         <b>관련 프로젝트</b><br/>
-                        <ProjectButton onClick={() => this.MoveScroll("CNS-Lotte")}>롯데마트 스마트스토어/다크스토어 구축 및 확산 프로젝트</ProjectButton><br/>
-                        <ProjectButton onClick={() => this.MoveScroll("CNS-Coupang")}>쿠팡 물류센터 쿠팡배송 프로젝트</ProjectButton><br/>
+                        <ProjectButton onClick={() => this.MoveScroll("TierJ-Daadok")}>구독 플랫폼(Daadok) 개발</ProjectButton><br/>
                       </DetailCareer>
                   </div>
               </li>
