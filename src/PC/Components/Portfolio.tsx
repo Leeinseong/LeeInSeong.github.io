@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-class Portfolio extends Component {
-    render() {
-        return (
-          <Container className="Portfolio">
-            <InnerDiv>
-              <TextDiv>
-                <TextP1>LeeInSeong</TextP1>
-                <TextP2>4th Year Junior Developer</TextP2>
-                <TextP3>안녕하세요. 다양한 언어, 프로젝트를 경험하며 개발실력과 커뮤니케이션 능력을 늘려가는 개발자입니다.<br/> 모든 프로젝트에 항상 책임감을 가지고 참여합니다.</TextP3>
-                <TextP4>Good morning. A developer who experiences various languages ​​and projects to increase development and communication skills.<br/> Always participates in all projects with responsibility.</TextP4>
-              </TextDiv>
-            </InnerDiv>
-          </Container>
-        );
-    }
+const Portfolio = () => {
+  return (
+    <Container className="Portfolio">
+      <InnerDiv>
+        <TextDiv>
+          <TextP1>LeeInSeong</TextP1>
+          <TextP2>4th Year Junior Developer</TextP2>
+          <TextP3>안녕하세요. 다양한 언어, 프로젝트를 경험하며 개발실력과 커뮤니케이션 능력을 늘려가는 개발자입니다.<br/> 모든 프로젝트에 항상 책임감을 가지고 참여합니다.</TextP3>
+          <TextP4>Good morning. A developer who experiences various languages ​​and projects to increase development and communication skills.<br/> Always participates in all projects with responsibility.</TextP4>
+        </TextDiv>
+      </InnerDiv>
+    </Container>
+  );
 }
 
 const Container = styled.div`
