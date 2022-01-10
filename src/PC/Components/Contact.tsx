@@ -5,6 +5,12 @@ import emailjs from 'emailjs-com';
 
 const Contact = () =>  {
   const [emailModal, setEmailModal] = useState(false);
+
+  const [name, setName] = useState("");
+  const [phoneNumber, setOPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
   // const onSubmit = data => {
   //   window.Email.send({
   //         SecureToken : "C973D7AD-F097-4B95-91F4-40ABC5567812",
@@ -17,7 +23,7 @@ const Contact = () =>  {
   //     )
   // }
 
-  const onSubmit = (data: any, r: any) => {
+  const sendEmail = () => {
 
     const serviceId = 'service_vfjt67k';
     const templateId = 'template_ttfqbad';
@@ -32,7 +38,6 @@ const Contact = () =>  {
         console.log('Email successfully sent!')
     })
       .catch(err => console.error('There has been an error.  Here some thoughts on the error that occured:', err))
-    r.target.reset();
 }
 
   const customStyles = {
@@ -75,11 +80,27 @@ const Contact = () =>  {
               }}
             />
           </div>
-          <EmailDiv>
+          <EmailContainer>
+            <EmailDiv>
               <EmailTitle>이름</EmailTitle>
-              <EmailInput></EmailInput>
-          </EmailDiv>
-          <button onClick={() => onSubmit("A", "B")}>onSubmit</button>
+              <EmailInput value={name}/>
+            </EmailDiv>
+            <EmailDiv>
+              <EmailTitle>전화번호</EmailTitle>
+              <EmailInput value={phoneNumber}/>
+            </EmailDiv>
+            <EmailDiv>
+              <EmailTitle>이메일</EmailTitle>
+              <EmailInput value={email}/>
+            </EmailDiv>
+            <EmailDiv>
+              <EmailTitle>문의내용</EmailTitle>
+              <EmailInput value={name}/>
+            </EmailDiv>
+            <EmailDiv>
+              <button onClick={() => sendEmail()}>전송</button>
+            </EmailDiv>
+          </EmailContainer>
         </div>
       </Modal>
     </Container>
@@ -119,16 +140,25 @@ const ContentDiv = styled.div`
   font-size:20px;
   margin-left:30px;
 `
+
+const EmailContainer = styled.div`
+  margin-top: 5px;
+`
+
 const EmailDiv = styled.div`
   display: flex;
   margin-top: 5px;
 `
 
 const EmailTitle = styled.label`
-  font-size: 22px;
-  width: 100px;
+  font-size: 20px;
+  width: 120px;
 `
 const EmailInput = styled.input`
+  height: 20px;
+  width: 150px;
+`
+const EmailTextArea = styled.textarea`
   height: 20px;
   width: 150px;
 `
