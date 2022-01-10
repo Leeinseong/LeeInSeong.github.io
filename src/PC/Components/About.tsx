@@ -19,7 +19,7 @@ const About = () => {
             
             <TitleAbout>스킬</TitleAbout>
             <DetailAbout>
-              React, React Native, TypeORM, C#, JAVA, SPRING<br/>
+              React, React Native, TypeORM, C#, JAVA, SPRING, JavaScript<br/>
               IIS, ORACLE, MSSQL, PostgreSQL
             </DetailAbout>
 
