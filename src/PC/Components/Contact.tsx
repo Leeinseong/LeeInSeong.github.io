@@ -7,21 +7,9 @@ const Contact = () =>  {
   const [emailModal, setEmailModal] = useState(false);
 
   const [name, setName] = useState("");
-  const [phoneNumber, setOPhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
-  // const onSubmit = data => {
-  //   window.Email.send({
-  //         SecureToken : "C973D7AD-F097-4B95-91F4-40ABC5567812",
-  //         To : data.email,
-  //         From : "you@isp.com",
-  //         Subject : "This is the subject",
-  //         Body : "And this is the body" + data.firstname
-  //     }).then(
-  //         message => alert(message)
-  //     )
-  // }
 
   const sendEmail = () => {
 
@@ -32,12 +20,17 @@ const Contact = () =>  {
     emailjs.send(
       serviceId,
       templateId, 
-      {from_name: "test", reply_to:"TEST", message:"testgt"},
+      {from_name: name, phone_number:phoneNumber, reply_to: email, message: message},
       userId
     ).then(res => {
-        console.log('Email successfully sent!')
+      alert("문의를 성공하였습니다.");
+      setEmailModal(false);
+      setName("");
+      setEmail("");
+      setPhoneNumber("");
+      setMessage("");
     })
-      .catch(err => console.error('There has been an error.  Here some thoughts on the error that occured:', err))
+    .catch(err => console.error('There has been an error.  Here some thoughts on the error that occured:', err))
 }
 
   const customStyles = {
@@ -83,21 +76,21 @@ const Contact = () =>  {
           <EmailContainer>
             <EmailDiv>
               <EmailTitle>이름</EmailTitle>
-              <EmailInput value={name}/>
+              <EmailInput value={name} onChange={(e) => setName(e.target.value)}/>
             </EmailDiv>
             <EmailDiv>
               <EmailTitle>전화번호</EmailTitle>
-              <EmailInput value={phoneNumber}/>
+              <EmailInput value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}/>
             </EmailDiv>
             <EmailDiv>
               <EmailTitle>이메일</EmailTitle>
-              <EmailInput value={email}/>
+              <EmailInput value={email} onChange={(e) => setEmail(e.target.value)}/>
             </EmailDiv>
             <EmailDiv>
               <EmailTitle>문의내용</EmailTitle>
-              <EmailInput value={name}/>
+              <EmailTextArea value={message} onChange={(e) => setMessage(e.target.value)}/>
             </EmailDiv>
-            <EmailDiv>
+            <EmailDiv style={{justifyContent:"flex-end"}}>
               <button onClick={() => sendEmail()}>전송</button>
             </EmailDiv>
           </EmailContainer>
@@ -156,11 +149,11 @@ const EmailTitle = styled.label`
 `
 const EmailInput = styled.input`
   height: 20px;
-  width: 150px;
+  width: 250px;
 `
 const EmailTextArea = styled.textarea`
   height: 20px;
-  width: 150px;
+  width: 250px;
 `
 
 
