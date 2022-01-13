@@ -1,4 +1,4 @@
-import React, { Component, useContext } from 'react';
+import { useContext } from 'react';
 import styled from 'styled-components';
 import {ProjectContext} from './Main';
 import "../Layout/Css/Timeline.css";
@@ -22,7 +22,7 @@ const Career = (props: any) => {
               return (
                 <li key={idx}>
                   <div className="cbp_tmtime"><span>{item.startMonth}</span> <span className="large">{item.endMonth}</span></div>
-                  <div className={"cbp_tmicon " + (item.type == 'sch' ? 'bg-infgo' : 'bg-green')}><i className="zmdi zmdi-city"></i></div>
+                  <div className={"cbp_tmicon " + (item.type === 'sch' ? 'bg-infgo' : 'bg-green')}><i className="zmdi zmdi-city"></i></div>
                   <div className="cbp_tmlabel"> 
                     <TitleCareer>{item.name + " " + item.department}</TitleCareer>
                     <DetailCareer>

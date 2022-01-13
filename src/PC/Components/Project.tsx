@@ -1,28 +1,10 @@
-import React, { Component, useContext } from 'react';
+import { useContext } from 'react';
 import styled from 'styled-components';
-import { isIfStatement } from 'typescript';
 import { ProjectContext } from './Main';
 
 const Project = (props: any) =>  {
   const {project, setProject} = useContext(ProjectContext)
-
   const projectList = props.projectList;
-
-  
-  const ButtonClick = ( e: any ) => {
-    var head = document.getElementById( e +"-Header");
-    var detail = document.getElementById( e +"-Detail");
-    var button = document.getElementById( e +"-Button");
-    // if(detail.style.display !== 'grid'){
-    //   head.style.borderBottom = "solid grey 0.5px";
-    //   detail.style.display = "grid";
-    //   button.src = "/img/BtnUp.png"
-    // }else{
-    //   head.style.borderBottom = "";
-    //   detail.style.display = "none";
-    //   button.src = "/img/BtnDown.png"
-    // }
-  }
   
   return (
     <Container id="Project">
@@ -35,15 +17,15 @@ const Project = (props: any) =>  {
                 return (
                   <SubContainer id={pItem.id} key={pIdx}>
                     <ButtonContainer id="IS-Telegram-Header" onClick={(e) => {
-                      if(project == pItem.id){
+                      if(project === pItem.id){
                         setProject(null)
                       }else{
                         setProject(pItem.id)
                       }}}>
                       <b>[{pItem.projectType}] {pItem.title}</b>
-                      <ButtonImg id="IS-Telegram-Button" src={project == pItem.id ? "/img/btn_up.png" : "/img/btn_down.png"} ></ButtonImg>
+                      <ButtonImg id="IS-Telegram-Button" src={project === pItem.id ? "/img/btn_up.png" : "/img/btn_down.png"} ></ButtonImg>
                     </ButtonContainer>
-                    <DetailContainer style={{display: project == pItem.id ? "block" : "none"}}>
+                    <DetailContainer style={{display: project === pItem.id ? "block" : "none"}}>
                       <TitleDiv>기간</TitleDiv>
                       <ContentDiv>{pItem.period}</ContentDiv>
                       <TitleDiv>개발환경</TitleDiv>
@@ -95,7 +77,7 @@ const Project = (props: any) =>  {
         <SubContainer id="IS-Portfolio">
           <ButtonContainer id="IS-Portfolio-Header"
             onClick={(e) => {
-              if(project == "IS-Portfolio"){
+              if(project === "IS-Portfolio"){
                 setProject(null)
               }else{
                 setProject("IS-Portfolio")
@@ -103,7 +85,7 @@ const Project = (props: any) =>  {
             <b>[개인] 개발자 포토폴리와 깃허브 페이지</b>
             <ButtonImg id="IS-Portfolio-Button" src="/img/BtnDown.png"></ButtonImg>
           </ButtonContainer>
-          <DetailContainer style={{display: project == "IS-Portfolio" ? "block" : "none"}}>
+          <DetailContainer style={{display: project === "IS-Portfolio" ? "block" : "none"}}>
             <TitleDiv>기간</TitleDiv>
             <ContentDiv>2021년 1월 ~ 2021년 2월</ContentDiv>
             <TitleDiv>개발환경</TitleDiv>
