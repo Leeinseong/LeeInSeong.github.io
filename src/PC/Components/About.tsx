@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const About = () => {
+const About = (props: any) => {
+  const projectList = props.projectList;
+
   return (
     <Container id="About">
       <InnerDiv>
@@ -11,10 +12,15 @@ const About = () => {
           <TextDiv>
             <TitleAbout>경력사항</TitleAbout>
             <DetailAbout>
-              <b>2012/03 ~ 2018/02</b> 아주대학교 소프트웨어공학과 졸업<br/>
-              <b>2018/03 ~ 2019/12&nbsp;</b> <DetailAboutCompany>GS ITM</DetailAboutCompany> 커머스사업센터 LF팀 패널<br/>
-              <b>2020/01 ~ 2021/06 </b> <DetailAboutCompany>LG CNS</DetailAboutCompany> 스마트F&C 스마트물류담당 스마트물류솔루션팀<br/>
-              <b>2021/07 ~ Now &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> <DetailAboutCompany>Tier.J</DetailAboutCompany> 정기 구독 플랫폼(다독) 개발팀<br/>
+              {projectList?.map((item: any, idx: any) => {
+                return(
+                  <div className='row' key={idx}>
+                    <DetailAboutPeriod><b>{item.startMonth} ~ {item.endMonth} </b></DetailAboutPeriod>
+                    <DetailAboutCompany>{item.name + " "}</DetailAboutCompany>
+                    <DetailAboutDepartment>{item.department}</DetailAboutDepartment>
+                  </div>
+                )
+              })}
             </DetailAbout>
             
             <TitleAbout>스킬</TitleAbout>
@@ -81,9 +87,16 @@ const DetailAbout = styled.p`
   line-height : 1.7;
   font-size: 20px;
 `
-const DetailAboutCompany = styled.span`
+const DetailAboutPeriod = styled.div`
+  width: 200px;
+`
+const DetailAboutCompany = styled.div`
+  width: 100px;
   font-size: 20px;
   color: red;
+`
+const DetailAboutDepartment = styled.span`
+  font-size: 20px;
 `
 const ImgProfile = styled.img`
   margin: auto 0px;

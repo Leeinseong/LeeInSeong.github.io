@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import styled from 'styled-components';
+import {ProjectContext} from './Main';
+import "../Layout/Css/Timeline.css";
 
-const Career = () => {
+const Career = (props: any) => {
+  const {setProject} = useContext(ProjectContext)
+  const projectList = props.projectList;
 
   const MoveScroll = (e: any) => {
     var projectDiv = document.getElementById(e);
     window.scrollTo(0, projectDiv!.offsetTop - 80);
-
-    var head = document.getElementById( e +"-Header");
-    var detail = document.getElementById( e +"-Detail");
-
-    if(detail!.style.display !== 'grid'){
-      head!.click();
-    }
+    setProject(e);
   }
 
     return (
@@ -20,65 +18,30 @@ const Career = () => {
         <InnerDiv>
           <MainTitle>Career</MainTitle>
           <ul className="cbp_tmtimeline">
-              <li>
-                  <div className="cbp_tmtime"><span>2012/03</span> <span className="large">~2018/02</span></div>
-                  <div className="cbp_tmicon bg-infgo"><i className="zmdi zmdi-city"></i></div>
+            {projectList?.map((item: any, idx: any) => {
+              return (
+                <li key={idx}>
+                  <div className="cbp_tmtime"><span>{item.startMonth}</span> <span className="large">{item.endMonth}</span></div>
+                  <div className={"cbp_tmicon " + (item.type == 'sch' ? 'bg-infgo' : 'bg-green')}><i className="zmdi zmdi-city"></i></div>
                   <div className="cbp_tmlabel"> 
-                    <TitleCareer>아주대학교 소프트웨어공학과</TitleCareer>
+                    <TitleCareer>{item.name + " " + item.department}</TitleCareer>
                     <DetailCareer>
                         <b>관련 프로젝트</b><br/>
-                        <ProjectButton onClick={() => MoveScroll("IS-NFC")}>NFC 태그 주문 및 결제 프로그램</ProjectButton><br/>
+                        {item?.projectList?.map((projectItem: any, projectIndex: any) => {
+                          return (
+                            <div key={projectIndex}>
+                              <ProjectButton
+                                onClick={() => MoveScroll(projectItem.id)}>
+                                {projectItem.title}
+                              </ProjectButton>
+                            </div>
+                          )
+                        })}
                     </DetailCareer>
                   </div>
-              </li>
-              <li>
-                  <div className="cbp_tmtime" ><span>2018/03</span> <span>~2019/12</span></div>
-                  <div className="cbp_tmicon bg-green"><i className="zmdi zmdi-case"></i></div>
-                  <div className="cbp_tmlabel">
-                      <TitleCareer>GSITM 커머스사업센터 LF팀</TitleCareer>
-                      <DetailCareer>
-                        <b>관련 프로젝트</b><br/>
-                        <ProjectButton onClick={() => MoveScroll("ITM-NBOS")}>NBOS 구조개선 프로젝트</ProjectButton><br/>
-                        <ProjectButton onClick={() => MoveScroll("ITM-Brandmall")}>브랜드몰 구축 프로젝트</ProjectButton><br/>
-                      </DetailCareer>
-                  </div>
-              </li>
-              <li>
-                  <div className="cbp_tmtime" ><span>2020/01</span> <span>~2021/06</span></div>
-                  <div className="cbp_tmicon bg-green"> <i className="zmdi zmdi-case"></i></div>
-                  <div className="cbp_tmlabel">
-                      <TitleCareer>LG CNS 스마트F&C사업부 스마트물류담당 스마트물류솔루션팀</TitleCareer>
-                      <DetailCareer>
-                        <b>관련 프로젝트</b><br/>
-                        <ProjectButton onClick={() => MoveScroll("CNS-Lotte")}>롯데마트 스마트스토어/다크스토어 구축 및 확산 프로젝트</ProjectButton><br/>
-                        <ProjectButton onClick={() => MoveScroll("CNS-Coupang")}>쿠팡 물류센터 쿠팡배송 프로젝트</ProjectButton><br/>
-                      </DetailCareer>
-                  </div>
-              </li>
-              <li>
-                  <div className="cbp_tmtime" ><span>2021/06</span> <span>~Now</span></div>
-                  <div className="cbp_tmicon bg-green"> <i className="zmdi zmdi-case"></i></div>
-                  <div className="cbp_tmlabel">
-                      <TitleCareer>Tier.J 구독 플랫폼 개발팀</TitleCareer>
-                      <DetailCareer>
-                        <b>관련 프로젝트</b><br/>
-                        <ProjectButton onClick={() => MoveScroll("TierJ-Daadok")}>정기 구독 플랫폼(Daadok) 개발</ProjectButton><br/>
-                      </DetailCareer>
-                  </div>
-              </li>
-              <li>
-                  <div className="cbp_tmtime" ></div>
-                  <div className="cbp_tmicon bg-blush"><i className="zmdi zmdi-pin"></i></div>
-                  <div className="cbp_tmlabel">
-                      <TitleCareer>개인 프로젝트</TitleCareer>
-                      <DetailCareer>
-                        <b>관련 프로젝트</b><br/>
-                        <ProjectButton onClick={() => MoveScroll("IS-Telegram")}>공지/공시 확인 및 자동 매매 프로그램</ProjectButton><br/>
-                        <ProjectButton onClick={() => MoveScroll("IS-Portfolio")}>ReactJS 개발자 포토폴리오</ProjectButton><br/>
-                        <ProjectButton onClick={() => MoveScroll("IS-Telegram")}>가상화폐 이동 감시 텔레그램 챗봇</ProjectButton><br/>
-                      </DetailCareer>
-                  </div>
-              </li>
+                </li>
+              )
+            })}
             </ul>  
           </InnerDiv>
         </Container>

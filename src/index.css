@@ -22,3 +22,7 @@ button {
   padding: 8px 20px;
   font-weight: bold;
 }
+
+.row{
+  display: flex;
+}
