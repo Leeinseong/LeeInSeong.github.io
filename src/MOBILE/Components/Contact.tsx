@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import Modal from 'react-modal';
 import emailjs from 'emailjs-com';
@@ -50,7 +50,7 @@ const Contact = () =>  {
         <MainTitle>CONTACT</MainTitle>
         <ContentDiv>
         <h1 style={{marginTop:"10px"}}>이인성(Lee InSeong)</h1>
-        ✉️ <a target='_blank' rel="noopener noreferrer" style={{color: "-webkit-link", textDecorationLine:"underline", cursor:"pointer"}} onClick={() => setEmailModal(true)}>dlstjd0117@ajou.ac.kr</a><br/>
+        ✉️ <span style={{color: "-webkit-link", textDecorationLine:"underline", cursor:"pointer"}} onClick={() => setEmailModal(true)}>dlstjd0117@ajou.ac.kr</span><br/>
         📞 010-2369-5186<br/>
         🌍 <a target='_blank' href='https://github.com/Leeinseong' rel="noopener noreferrer" >https://github.com/Leeinseong</a>
         </ContentDiv>

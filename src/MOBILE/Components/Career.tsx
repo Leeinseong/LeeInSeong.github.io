@@ -1,4 +1,4 @@
-import React, { Component, useContext } from 'react';
+import { useContext } from 'react';
 import styled from 'styled-components';
 
 import './Css/Career.css';

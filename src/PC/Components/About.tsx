@@ -13,7 +13,7 @@ const About = (props: any) => {
             <TitleAbout>경력사항</TitleAbout>
             <DetailAbout>
               {projectList?.map((item: any, idx: any) => {
-                if(item.type != "personal"){
+                if(item.type !== "personal"){
                   return(
                     <div className='row' key={idx}>
                       <DetailAboutPeriod><b>{item.startMonth} ~ {item.endMonth} </b></DetailAboutPeriod>
@@ -21,6 +21,7 @@ const About = (props: any) => {
                       <DetailAboutDepartment>{item.department}</DetailAboutDepartment>
                     </div>
                   )
+                  return <></>
                 }
               })}
             </DetailAbout>

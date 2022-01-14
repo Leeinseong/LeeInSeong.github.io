@@ -1,5 +1,4 @@
-import React, { Component, createContext, useState } from 'react';
-import styled from 'styled-components';
+import {createContext, useState } from 'react';
 import Portfolio   from './Portfolio';
 import About   from './About';
 import Career  from './Career';
