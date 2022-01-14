@@ -10,7 +10,7 @@ const Skill = () => {
         <LanguageImg alt="React" src= "/img/image_React.png"></LanguageImg>
         <LanguageImg alt="ReactNative" src= "/img/image_ReactNative.png"></LanguageImg>
         <LanguageImg alt='CSharp' src= "/img/image_CSharp.png"></LanguageImg>
-        <LanguageImg alt='Java' src= "/img/image_java.png"></LanguageImg>
+        <LanguageImg alt='Java' src= "/img/image_Java.png"></LanguageImg>
         <LanguageImg alt='JavaScript' src= "/img/image_JavaScript.png"></LanguageImg>
         <LanguageImg alt='Spring' src= "/img/image_Spring.png"></LanguageImg>
         <br/>
