@@ -21,8 +21,8 @@ const About = (props: any) => {
                       <DetailAboutDepartment>{item.department}</DetailAboutDepartment>
                     </div>
                   )
-                  return <></>
                 }
+                return <></>
               })}
             </DetailAbout>
             
