@@ -73,32 +73,6 @@ const Project = (props: any) =>  {
             </div>
           )
         })}
-
-        <SubContainer id="IS-Portfolio">
-          <ButtonContainer id="IS-Portfolio-Header"
-            onClick={(e) => {
-              if(project === "IS-Portfolio"){
-                setProject(null)
-              }else{
-                setProject("IS-Portfolio")
-              }}}>
-            <b>[개인] 개발자 포토폴리와 깃허브 페이지</b>
-            <ButtonImg id="IS-Portfolio-Button" src="/img/BtnDown.png"></ButtonImg>
-          </ButtonContainer>
-          <DetailContainer style={{display: project === "IS-Portfolio" ? "block" : "none"}}>
-            <TitleDiv>기간</TitleDiv>
-            <ContentDiv>2021년 1월 ~ 2021년 2월</ContentDiv>
-            <TitleDiv>개발환경</TitleDiv>
-            <ContentDiv>ReactJS, JavaScript</ContentDiv>
-            <TitleDiv>상세설명</TitleDiv>
-            <ContentDiv>
-              ReactJS를 이용하여 구현한 개발자 Portfolio 반응형 웹페이지
-            </ContentDiv>
-            <TitleDiv>Git</TitleDiv>
-            <ContentDiv><a target="_blank" rel='noreferrer' href="https://github.com/Leeinseong/LeeInSeong.github.io">https://github.com/Leeinseong/LeeInSeong.github.io</a></ContentDiv>
-          </DetailContainer>
-        </SubContainer>
-
       </InnerDiv>
     </Container>
   );

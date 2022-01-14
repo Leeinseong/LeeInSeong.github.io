@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
 import styled from 'styled-components';
 
-class About extends Component {
-    render() {
+const About = (props: any) => {
+  const projectList = props.projectList;
         return (
           <Container id="About">
             <InnerDiv>
@@ -11,16 +10,27 @@ class About extends Component {
                 <ImgProfile src="/img/AboutProfile.jpg"></ImgProfile>
                 <TextDiv>
                   <TitleAbout>경력사항</TitleAbout>
+
                   <DetailAbout>
-                    <b>2012/03 ~ 2018/02</b><br/> 아주대학교 소프트웨어공학과 졸업<br/>
-                    <b>2018/03 ~ 2019/12</b><br/> GS ITM 커머스사업센터 LF팀 패널<br/>
-                    <b>2020/01 ~ Now &nbsp;&nbsp;&nbsp;&nbsp;</b><br/> LG CNS 스마트F&C 스마트물류담당 스마트물류솔루션팀<br/>
+                    {projectList?.map((item: any, idx: any) => {
+                      if(item.type != "personal"){
+                        return(
+                          <div key={idx}>
+                            <DetailAboutPeriod><b>{item.startMonth} ~ {item.endMonth} </b></DetailAboutPeriod>
+                            <div className='row'>
+                              <DetailAboutCompany>{item.name}</DetailAboutCompany>
+                              <DetailAboutDepartment>&nbsp;{item.department}</DetailAboutDepartment>
+                            </div>
+                          </div>
+                        )
+                      }
+                    })}
                   </DetailAbout>
                   
                   <TitleAbout>스킬</TitleAbout>
                   <DetailAbout>
-                    C, C#, JAVA, SPRING, ORACLE <br/>
-                    REACTJS, IIS, MSSQL
+                    React, React Native, TypeORM, C#, JAVA, SPRING, JavaScript<br/>
+                    IIS, ORACLE, MSSQL, PostgreSQL
                   </DetailAbout>
 
                   <TitleAbout>취득자격</TitleAbout>
@@ -32,13 +42,10 @@ class About extends Component {
             </InnerDiv>
           </Container>
         );
-    }
 }
 
 const Container = styled.div`
-  padding-top: 10px;
-  padding-bottom: 20px;
-  height:Auto;
+  padding: 10px 10px;
   background: #f8f8f8;
 `
 const InnerDiv = styled.div`
@@ -77,4 +84,13 @@ const DetailAbout = styled.p`
   font-size: 20px;
 `
 
+const DetailAboutPeriod = styled.div`
+`
+const DetailAboutCompany = styled.div`
+  font-size: 20px;
+  color: red;
+`
+const DetailAboutDepartment = styled.span`
+  font-size: 20px;
+`
 export default About;

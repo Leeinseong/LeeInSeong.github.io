@@ -6,24 +6,22 @@ import { Link } from 'react-router-dom';
 
 import './Css/Navigation.css';
 
-class PC_Navigation extends Component {
+const PC_Navigation = () => {
   
-  MoveScroll = (e) => {
+  const MoveScroll = (e: any) => {
     var projectDiv = document.getElementById(e);
-    window.scrollTo(0, projectDiv.offsetTop);
+    window.scrollTo(0, projectDiv!.offsetTop);
   }
 
-  render() {
-      return (
-         <MenuDiv>
-						<MenuButton onClick={() => this.MoveScroll("About")}>ABOUT</MenuButton>
-						<MenuButton onClick={() => this.MoveScroll("Career")}>CAREER</MenuButton>
-						<MenuButton onClick={() => this.MoveScroll("Project")}>PROJECT</MenuButton>
-						<MenuButton onClick={() => this.MoveScroll("Skill")}>SKILL</MenuButton>
-						<MenuButton onClick={() => this.MoveScroll("Contact")}>CONTACT</MenuButton>
-					</MenuDiv>
-      );
-    }
+    return (
+        <MenuDiv>
+          <MenuButton onClick={() => MoveScroll("About")}>ABOUT</MenuButton>
+          <MenuButton onClick={() => MoveScroll("Career")}>CAREER</MenuButton>
+          <MenuButton onClick={() => MoveScroll("Project")}>PROJECT</MenuButton>
+          <MenuButton onClick={() => MoveScroll("Skill")}>SKILL</MenuButton>
+          <MenuButton onClick={() => MoveScroll("Contact")}>CONTACT</MenuButton>
+        </MenuDiv>
+    );
   }
   
 const MenuDiv = styled.div`

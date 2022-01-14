@@ -67,8 +67,8 @@ const Contact = () =>  {
             <img
               className="add-delete-img"
               src= {"/img/icon_close.png"} 
-              style={{position:'absolute', width:40, height:40, right:10, top: 10, cursor:'pointer'}}
               alt="delete"
+              style={{position:'absolute', width:40, height:40, right:10, top: 10, cursor:'pointer'}}
               onClick={() => {
                 setEmailModal(false)
               }}
@@ -103,27 +103,18 @@ const Contact = () =>  {
 
 const Container = styled.div`
   padding-top: 10px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   height:Auto;
   background: #f8f8f8;
-
-  @media only screen and (max-width: 1280px) {
-    width: 1280px;
-  }
 `
 const InnerDiv = styled.div`
   height: Auto;
-  width: 1240px;
+  width: 100%;
   margin: 0 auto;
-
-  @media only screen and (max-width: 1280px) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
 `
 const MainTitle = styled.h1`
   margin: 30px 0px;
-  font-size: 100px;
+  font-size: 70px;
   font-weight: bold;
   font-style: italic;
   font-family: 'Titillium Web', sans-serif;
@@ -134,7 +125,6 @@ const ContentDiv = styled.div`
   font-size:20px;
   margin-left:30px;
 `
-
 const EmailContainer = styled.div`
   margin-top: 5px;
 `
@@ -156,6 +146,5 @@ const EmailTextArea = styled.textarea`
   height: 20px;
   width: 250px;
 `
-
 
 export default Contact;

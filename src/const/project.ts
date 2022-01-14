@@ -1,13 +1,38 @@
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 
-import PCHeader from './PC/Layout/Header';
-import PCRouter from './PC/Route/Router';
-
-import MobileHeader from './MOBILE/Layout/Header';
-import MobileRouter from './MOBILE/Route/Router';
-
-const projectList = [
+export const projectList = [
+  {
+    type: "personal",
+    name: "개인",
+    department: "프로젝트",
+    projectList: [
+      {
+        id:"IS-Telegram",
+        projectType:"개인",
+        title:"가상화폐 거래(지갑/토큰) 분석 텔레그램 챗봇",
+        period: "2020년 5월 ~ 2020년 7월",
+        language: "C#, Telegram Chatbot",
+        db: "Oracle",
+        management: "Git",
+        git: "https://github.com/Leeinseong/telegramAPI",
+        description: "Etherscan API를 통해 지정한 특정 지갑 또는 코인의 이동을 분석하고 설정한 조건에 맞는 Transaction 정보를 Telegram ChatBot을 통해 실시간으로 알려주는 프로그램",
+        role: "EtherScan API 분석\n" +
+              "지갑주소 생성/수정/삭제 기능 개발\n"+
+              "원하는 조건의 지갑이동 확인 메시지 개발"
+      },
+      {
+        id:"IS-Portfolio",
+        projectType:"개인",
+        title:"개발자 포토폴리와 깃허브 페이지",
+        period: "2021년 1월 ~ 2021년 2월",
+        language: "React, JavaScript",
+        db: "Oracle",
+        management: "Git",
+        git: "https://github.com/Leeinseong/LeeInSeong.github.io",
+        description: "React를 이용하여 구현한 개발자 Portfolio 반응형 웹페이지",
+        role: "React 페이지 개발"
+      }
+    ],
+  },
   {
     type: "sch",
     name: "아주대학교",
@@ -169,61 +194,5 @@ const projectList = [
           },
         ]
       }],
-    },
-]
-
-const App = () => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-  const handleResize = () => {
-    setScreenWidth(window.innerWidth);
-  }
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    return () => { // cleanup 
-      window.removeEventListener('resize', handleResize);
-    }
-  }, [])
-
-  if(screenWidth >= 780){
-    return (
-      <Layout id="Container">
-        <PCHeader/>
-        <Content>
-          <PCRouter/>
-        </Content>
-      </Layout>
-    );
-  }else{
-    return (
-      <MobileLayout id="Container">
-        <MobileHeader/>
-        <MobileContent>
-          <MobileRouter/>
-        </MobileContent>
-      </MobileLayout>
-    );
-  }
-}
-
-
-const Layout = styled.div`
-  margin: 0 0;
-  width: 100%;
-  display: flex;
-`
-const Content = styled.div`
-margin: 0 auto;
-width : 100%;
-`
-
-const MobileLayout = styled.div`
-  width: 100%;
-`
-
-const MobileContent = styled.div`
-  margin: 0 0;
-  width: 100%;
-`
-export default App;
+  },
+];
