@@ -197,22 +197,16 @@ export const projectList = [
       {
         id:"TierJ-NewOpen",
         projectType:"신규",
-        title:"가오픈 이벤트 사이트 (뉴오픈) 개발",
+        title:"가오픈 쿠폰 발급 사이트 (뉴오픈) 개발",
         period: "2021년 10월 ~ 2022년 11월",
         language: "React, TypeScript, JavaScript, GraphQL",
         db: "PostgreSQL",
         management: "Git, Notion, Docker, Jenkins",
         description: "가오픈 매장들을 모아 쿠폰을 발행해주고 홍보를 해주는 서비스",
         role: "서비스 기획 및 개발, API 개발\n" +
-              "가오픈 매장별 쿠폰 다운로드, 상세보기\n" +
+              "가오픈 매장별 쿠폰 다운로드 및 사용\n" +
               "매장까지 네이버 지도를 통한 길찾기\n"+ 
               "판매자 관리 페이지(가게정보, 쿠폰등록, 쿠폰발급내역) 개발",
-        href: [
-          {
-            title: "블로그글",
-            link : "https://blog.naver.com/aquazy/222607093466"
-          },
-        ]
       }
     ],
   },
