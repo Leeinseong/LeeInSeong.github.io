@@ -38,6 +38,9 @@ const About = (props: any) => {
             </DetailAbout>
           </TextDiv>
         </ContentDiv>
+        {/* <div>
+          RINK
+        </div> */}
       </InnerDiv>
     </Container>
   );

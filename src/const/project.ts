@@ -182,11 +182,15 @@ export const projectList = [
         db: "PostgreSQL",
         management: "Git, Notion, Docker, Jenkins",
         description: "정기구독 플랫폼 (다독) - 앱, 렌더링 페이지, 판매자 페이지, 관리자 페이지, 서버, 배치, DB 기획 및 개발",
-        role: "App - 기획 및 개발, CodePush를 통한 앱 배포\n" +
-               "서버 - 자동 무중단 배포(Nginx, Jenkins, Docker, BlueGreen 이중화), KakaoBiz 메시지, 푸쉬알람, API 개발\n" +
-               "배치 - 정기결제(이니시스), 배송조회(스마트택배 API), 구매확정, 리뷰요청 개발 \n" +
-               "DB - 설계 및 개발\n" +
-               "판매자 페이지, 관리자 페이지, 렌더링 페이지 개발",
+        role: "- App 기획 및 개발,API 개발\n"+
+              "- AWS EC2 Linux 인스턴스에 Jenkins, Docker 를 통한 배포 자동화 시스템 구축및 NginX 무중단 배포 적용(Blue-Green)\n"+
+              "- 서버 Node 의 점유 메모리 분석 및 수정\n"+
+              "- Node Inspect 와 Chrome dev-tools 를 통한 메모리 사용량 분석 및 개선\n"+
+              "- Figma 툴을 이용한 디자이너와 협업 및 퍼블리싱\n"+
+              "- CodePush를 통한 실시간 피드백 적용 및 트러블 슈팅\n"+
+              "- 정기결제(이니시스), 배송조회(스마트택배 API), 구매확정, 리뷰요청 배치 개발 및 SQL 코드 작\n"+
+              "- 판매자 페이지, 관리자 페이지, 렌더링 페이지 개발\n"+
+              "- DB 구조 개선을 위한 분석 및 설계",
         href: [
           {
             title: "블로그글",
@@ -198,15 +202,15 @@ export const projectList = [
         id:"TierJ-NewOpen",
         projectType:"신규",
         title:"가오픈 쿠폰 발급 사이트 (뉴오픈) 개발",
-        period: "2021년 10월 ~ 2022년 11월",
+        period: "2021년 10월 ~ 2021년 11월",
         language: "React, TypeScript, JavaScript, GraphQL",
         db: "PostgreSQL",
         management: "Git, Notion, Docker, Jenkins",
         description: "가오픈 매장들을 모아 쿠폰을 발행해주고 홍보를 해주는 서비스",
-        role: "서비스 기획 및 개발, API 개발\n" +
-              "가오픈 매장별 쿠폰 다운로드 및 사용\n" +
-              "매장까지 네이버 지도를 통한 길찾기\n"+ 
-              "판매자 관리 페이지(가게정보, 쿠폰등록, 쿠폰발급내역) 개발",
+        role: "- 서비스 기획 및 개발, API 개발\n" +
+              "- 가오픈 매장별 쿠폰 다운로드 및 사용\n" +
+              "- 매장까지 네이버 지도를 통한 길찾기\n"+ 
+              "- 판매자 관리 페이지(가게정보, 쿠폰등록, 쿠폰발급내역) 개발",
       }
     ],
   },
