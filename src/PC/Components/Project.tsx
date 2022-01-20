@@ -132,6 +132,7 @@ const SubContainer = styled.div`
 `
 const ButtonContainer = styled.div`
   padding: 10px;
+  cursor: pointer;
 `
 const ButtonImg = styled.img`
   width: 30px;
