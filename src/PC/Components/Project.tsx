@@ -22,12 +22,18 @@ const Project = (props: any) =>  {
                       }else{
                         setProject(pItem.id)
                       }}}>
-                      <b>[{pItem.projectType}] {pItem.title}</b>
+                      <b>[{pItem.projectType}] ({item.name}) {pItem.title}</b>
                       <ButtonImg id="IS-Telegram-Button" src={project === pItem.id ? "/img/btn_up.png" : "/img/btn_down.png"} ></ButtonImg>
                     </ButtonContainer>
                     <DetailContainer style={{display: project === pItem.id ? "block" : "none"}}>
                       <TitleDiv>기간</TitleDiv>
                       <ContentDiv>{pItem.period}</ContentDiv>
+                      <TitleDiv>인력구성 및 기여도</TitleDiv>
+                        <ContentDiv>
+                          {pItem.contribution?.split('\n').map((line: any) => {
+                            return <>{line}<br/></>;
+                          })}
+                        </ContentDiv>
                       <TitleDiv>개발환경</TitleDiv>
                       <ContentDiv>{pItem.language}</ContentDiv>
                       <TitleDiv>DB</TitleDiv>
@@ -52,6 +58,16 @@ const Project = (props: any) =>  {
                           return <>{line}<br/></>;
                         })}
                       </ContentDiv>
+                      {pItem.result? (
+                        <>
+                          <TitleDiv>성과/결과</TitleDiv>
+                          <ContentDiv>
+                            {pItem.result?.split('\n').map((line: any) => {
+                              return <>{line}<br/></>;
+                            })}
+                          </ContentDiv>
+                        </>
+                      ): null}
                       {pItem.href? (
                         <>
                           <TitleDiv>참고</TitleDiv>
