@@ -11,6 +11,7 @@ const Skill = () => {
         <LanguageImg alt='CSharp' src= "/img/image_CSharp.png"></LanguageImg>
         <LanguageImg alt='Java' src= "/img/image_Java.png"></LanguageImg>
         <LanguageImg alt='JavaScript' src= "/img/image_JavaScript.png"></LanguageImg>
+        <LanguageImg alt='TypeScript' src= "/img/image_TypeScript.png"></LanguageImg>
         <LanguageImg alt='Spring' src= "/img/image_Spring.png"></LanguageImg>
         <br/>
         <h2 style={{marginTop:"40px"}}>부스킬</h2>
