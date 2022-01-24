@@ -17,7 +17,7 @@ export const numb = (x: any) => {
 	return rev.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
-export const phoneFomatter = (num) => {
+export const phoneFomatter = (num: String) => {
   let formatNum = '';
   if (num.length == 11) {
     formatNum = num.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
