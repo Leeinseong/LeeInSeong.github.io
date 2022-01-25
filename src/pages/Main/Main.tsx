@@ -261,22 +261,9 @@ const projectList = [
         management: "Git",
         git: "https://github.com/Leeinseong/telegramAPI",
         description: "Etherscan API를 통해 지정한 특정 지갑 또는 코인의 이동을 분석하고 설정한 조건에 맞는 Transaction 정보를 Telegram ChatBot을 통해 실시간으로 알려주는 프로그램",
-        role: "EtherScan API 분석\n" +
-              "지갑주소 생성/수정/삭제 기능 개발\n"+
-              "원하는 조건의 지갑이동 확인 메시지 개발"
-      },
-      {
-        id:"IS-Portfolio",
-        projectType:"개인",
-        title:"개발자 포토폴리와 깃허브 페이지",
-        period: "2021년 1월 ~ 2021년 2월",
-        contribution: "기여도: 100%",
-        language: "React, JavaScript, HTML5",
-        db: "Oracle",
-        management: "Git",
-        git: "https://github.com/Leeinseong/LeeInSeong.github.io",
-        description: "React를 이용하여 구현한 개발자 Portfolio 반응형 웹페이지",
-        role: "React 페이지 개발"
+        role: "- EtherScan API 분석\n" +
+              "- 지갑주소 생성/수정/삭제 기능 개발\n"+
+              "- 원하는 조건의 지갑이동 확인 메시지 개발"
       }
     ],
   },
