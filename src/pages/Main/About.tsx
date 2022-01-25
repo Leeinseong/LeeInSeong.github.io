@@ -15,11 +15,13 @@ const About = (props: any) => {
               {projectList?.map((item: any, idx: any) => {
                 if(item.type !== "personal"){
                   return(
-                    <div className='row' key={idx}>
+                    <DetailAboutContainer key={idx}>
                       <DetailAboutPeriod><b>{item.startMonth} ~ {item.endMonth} </b></DetailAboutPeriod>
-                      <DetailAboutCompany>{item.name + " "}</DetailAboutCompany>
-                      <DetailAboutDepartment>{item.department}</DetailAboutDepartment>
-                    </div>
+                      <DetailAboutCompanyContainer>
+                        <DetailAboutCompany>{item.name + " "}</DetailAboutCompany>
+                        <DetailAboutDepartment>{item.department}</DetailAboutDepartment>
+                      </DetailAboutCompanyContainer>
+                    </DetailAboutContainer>
                   )
                 }
                 return <></>
@@ -28,8 +30,8 @@ const About = (props: any) => {
             
             <TitleAbout>스킬</TitleAbout>
             <DetailAbout>
-              React, React Native, TypeORM, C#, JAVA, SPRING, JavaScript<br/>
-              IIS, ORACLE, MSSQL, PostgreSQL
+              React, React Native, TypeORM, C#, Java, Spring, JavaScript<br/>
+              ORACLE, GraphQL MSSQL, PostgreSQL, IIS
             </DetailAbout>
 
             <TitleAbout>취득자격</TitleAbout>
@@ -38,63 +40,91 @@ const About = (props: any) => {
             </DetailAbout>
           </TextDiv>
         </ContentDiv>
-        {/* <div>
-          RINK
-        </div> */}
       </InnerDiv>
     </Container>
   );
 }
 
 const Container = styled.div`
+  width: 100%;
   padding-top: 10px;
   padding-bottom: 100px;
-  height:Auto;
   background: #f8f8f8;
 
-  @media only screen and (max-width: 1280px) {
-    width: 1280px;
+  @media only screen and (max-width: 767px) {
+    padding: 20px 0px;
   }
 `
 const InnerDiv = styled.div`
-  height: Auto;
-  width: 1240px;
-  margin: 0 auto;
-
-  @media only screen and (max-width: 1280px) {
-    padding-left: 20px;
-    padding-right: 20px;
+  width: 1280px;
+  margin: 0px auto;
+  
+  @media only screen and (max-width: 767px) {
+    width: 90%;
   }
 `
 const MainTitle = styled.h1`
   margin: 30px 0px;
+  padding: 0 10px;
   font-size: 100px;
   font-weight: bold;
   font-style: italic;
-  font-family: 'Titillium Web', sans-serif;
   color: #3b310f;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 80px;
+  }
 `
 const ContentDiv = styled.div`
   display:flex;
-  width: Auto;
+
+  @media only screen and (max-width: 767px) {
+    display: block;
+  }
+`
+const ImgProfile = styled.img`
+  width: 400px;
+  height:400px;
+  margin-right: 50px;
+
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+    height: auto;
+    margin-right: 0px;
+  }
 `
 
 const TextDiv = styled.div`
-  margin: 0px 0px 0px 50px;
-`
+  /* margin: 0px 0px 0px 50px; */
+  padding: 0px 10px;
 
+  @media only screen and (max-width: 767px) {
+    padding-top:10px;
+  }
+`
 const TitleAbout = styled.h2`
-  margin:0px;
+  margin: 0px;
   color: #301500;
   font-size: 30px;
+  margin-bottom:5px;
 `
 const DetailAbout = styled.p`
   margin-top: 0px;
   line-height : 1.7;
   font-size: 20px;
 `
+const DetailAboutContainer = styled.div`
+  display: flex;
+
+  @media only screen and (max-width: 767px) {
+    display: block;
+  }
+`
 const DetailAboutPeriod = styled.div`
   width: 200px;
+`
+const DetailAboutCompanyContainer = styled.div`
+  display: flex;
 `
 const DetailAboutCompany = styled.div`
   width: 100px;
@@ -103,11 +133,6 @@ const DetailAboutCompany = styled.div`
 `
 const DetailAboutDepartment = styled.span`
   font-size: 20px;
-`
-const ImgProfile = styled.img`
-  margin: auto 0px;
-  width: 400px;
-  height:400px;
 `
 
 export default About;

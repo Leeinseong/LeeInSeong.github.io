@@ -1,23 +1,9 @@
 //Header 파일
-import React, {Component, useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import styled from 'styled-components';
 // import { Link } from 'react-router-dom';
-import Navigation from './Navigation';
 
-// const getCurrentScroll = () =>{
-//   if( window.scrollY >= 80){
-//     document.getElementById("Header").style.background="#FFFFFF";
-//     document.getElementById("Header").style.borderBottom="1px solid rgb(235, 235, 235)";
-//     document.getElementById("LogoButton").style.display="block";  
-//   }
-//   else{
-//     document.getElementById("Header").style.background="none";
-//     document.getElementById("Header").style.borderBottom="none";
-//     document.getElementById("LogoButton").style.display="none";
-//   }
-// }
-
-const PC_Header = () => {
+const Header = () => {
   const [scrollY, setScrollY] = useState(window.scrollY);
 
   const getCurrentScroll = () =>{
@@ -31,13 +17,24 @@ const PC_Header = () => {
     }
   }, []);
 
+  const MoveScroll = (e: any) => {
+    var projectDiv = document.getElementById(e);
+    window.scrollTo(0, projectDiv!.offsetTop);
+  }
+
   return (
     <Head id="Header" style={{backgroundColor: scrollY >= 80 ? "#FFFFFF" : "transparent"}}>
       <InnerDiv>
         <ImgButton id="LogoButton">
           <ImgProfile src= "/img/IN.png"/>
         </ImgButton>
-        <Navigation/>
+        <MenuDiv>
+          <MenuButton onClick={() => MoveScroll("About")}>ABOUT</MenuButton>
+          <MenuButton onClick={() => MoveScroll("Career")}>CAREER</MenuButton>
+          <MenuButton onClick={() => MoveScroll("Project")}>PROJECT</MenuButton>
+          <MenuButton onClick={() => MoveScroll("Skill")}>SKILL</MenuButton>
+          <MenuButton onClick={() => MoveScroll("Contact")}>CONTACT</MenuButton>
+        </MenuDiv>
       </InnerDiv>
     </Head>
   );
@@ -79,6 +76,32 @@ const ImgButton = styled.button`
   width: 50px;
   height: 50px;
  `
+ 
+const MenuDiv = styled.div`
+display: flex;
+top: 50%;
+right: 15px;
+transform: translateY(-50%);
+position: absolute;
+`
+const MenuButton = styled.button`
+display: block;
+padding: 20px 0;
+font-size: 17px;
+color: #402D1A;
+font-weight: bold;
+padding-left: 30px;
+text-decoration: none;
+vertical-align: baseline;
+color: #666;
+background: transparent;
+border: none;
+cursor: pointer;
 
-export default PC_Header;
+&:focus{
+  outline:none;
+}
+`
+
+export default Header;
 

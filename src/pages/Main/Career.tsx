@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 import {ProjectContext} from './Main';
-import "../Layout/Css/Timeline.css";
+import "../../components/styles/Timeline.css";
 
 const Career = (props: any) => {
   const {setProject} = useContext(ProjectContext)
@@ -21,7 +21,7 @@ const Career = (props: any) => {
             {projectList?.map((item: any, idx: any) => {
               return (
                 <li key={idx}>
-                  <div className="cbp_tmtime"><span>{item.startMonth}</span> <span className="large">{item.endMonth}</span></div>
+                  <div className="cbp_tmtime" ><span>{item.startMonth}</span> <span className="large">{item.endMonth}</span></div>
                   <div className={"cbp_tmicon " + (item.type === 'sch' ? 'bg-infgo' : item.type === 'personal' ? 'bg-blush' : 'bg-green')}><i className={"zmdi " + (item.type === 'sch' ? 'zmdi-city' : item.type === 'personal' ? 'zmdi-pin' : 'zmdi-case')}></i></div>
                   <div className="cbp_tmlabel"> 
                     <TitleCareer>{item.name + " " + item.department}</TitleCareer>
@@ -49,30 +49,31 @@ const Career = (props: any) => {
 }
     
 const Container = styled.div`
-  padding-top: 10px;
-  padding-bottom: 50px;
-  height:Auto;
+width: 100%;
+padding-top: 10px;
+padding-bottom: 100px;
 
-  @media only screen and (max-width: 1280px) {
-    width: 1280px;
-  }
+@media only screen and (max-width: 767px) {
+  padding: 10px 0px;
+}
 `
 const InnerDiv = styled.div`
-  height: Auto;
-  width: 1240px;
-  margin: 0 auto;
+width: 1280px;
+margin: 0px auto;
 
-  @media only screen and (max-width: 1280px) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+@media only screen and (max-width: 767px) {
+  width: 90%;
+}
 `
 const MainTitle = styled.h1`
   margin: 30px 0px;
   font-size: 100px;
   font-weight: bold;
   font-style: italic;
-  font-family: 'Titillium Web', sans-serif;
+  
+  @media only screen and (max-width: 767px) {
+    font-size: 80px;
+  }
 `
 const TitleCareer = styled.h2` 
   font-size: 20px;
@@ -88,6 +89,7 @@ const ProjectButton = styled.button`
   cursor: pointer;
   font-size: 18px;
   margin-top: 5px;
+  text-align: left;
 `
 
  export default Career;

@@ -95,34 +95,31 @@ const Project = (props: any) =>  {
 }
     
 const Container = styled.div`
-  padding-top: 10px;
-  padding-bottom: 80px;
-  height:Auto;
-  background: #F3F3F3;
-  @media only screen and (max-width: 1280px) {
-    width: 1280px;
-  }
+width: 100%;
+padding-top: 10px;
+padding-bottom: 100px;
+background: #f8f8f8;
+
+@media only screen and (max-width: 767px) {
+  padding: 10px 0px;
+}
 `
 const InnerDiv = styled.div`
-  height: Auto;
-  width: 1240px;
-  margin: 0 auto;
+width: 1280px;
+margin: 0px auto;
 
-  @media only screen and (max-width: 1280px) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+@media only screen and (max-width: 767px) {
+  width: 90%;
+}
 `
 const MainTitle = styled.h1`
   margin: 30px 0px;
   font-size: 100px;
   font-weight: bold;
   font-style: italic;
-  font-family: 'Titillium Web', sans-serif;
-  color: #3b310f;
-
-  @media only screen and (max-width: 1280px) {
-    padding-left: 20px;
+  
+  @media only screen and (max-width: 767px) {
+    font-size: 80px;
   }
 `
 const SubContainer = styled.div`

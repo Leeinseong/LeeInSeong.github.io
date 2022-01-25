@@ -23,6 +23,14 @@ button {
   font-weight: bold;
 }
 
+p {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+div{
+  font-family: 'Titillium Web', sans-serif;
+}
+
 .row{
   display: flex;
 }

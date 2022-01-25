@@ -4,6 +4,7 @@ const Portfolio = () => {
   return (
     <Container className="Portfolio">
       <InnerDiv>
+        <InImg src="/img/AboutIN_Mobile.png"></InImg>
         <TextDiv>
           <TextP1>LeeInSeong</TextP1>
           <TextP2>4th Year Junior Developer</TextP2>
@@ -16,8 +17,12 @@ const Portfolio = () => {
 }
 
 const Container = styled.div`
-  height:auto;
-  background: #FFF;
+  width: 100%;
+
+  @media only screen and (max-width: 767px) {
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
 `
 const InnerDiv = styled.div`
   width: 1280px;
@@ -25,24 +30,42 @@ const InnerDiv = styled.div`
   padding-bottom: 200px;
   margin: 0 auto;
   background: url(../img/AboutIN.png) left Top no-repeat;
+
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+    text-align:center;
+    background: none;
+  }
+`
+const InImg = styled.img`
+  display: none;
+  width: 100%;
+
+  @media only screen and (max-width: 767px) {
+    display: block;
+  }
 `
 const TextDiv = styled.div`
   position: relative;
   padding-left: 760px;
   padding-top: 250px;
   padding-right: 30px;
+
+  @media only screen and (max-width: 767px) {
+    padding: 0px 10px;
+  }
 `
 const TextP1 = styled.p`
   font-size: 50px;
   font-weight: bold;
   color: #3b310f;
   margin: 0;
-  font-family: 'Titillium Web', sans-serif;
 `
 const TextP2 = styled.p`
   font-size: 20px;
   font-weight: bold;
-  font-family: 'Titillium Web', sans-serif;
   margin: 0;
 `
 
@@ -50,13 +73,11 @@ const TextP3 = styled.p`
 font-size: 15px;
 line-height: 1.5;
 color: #54450e;
-  font-family: 'Titillium Web', sans-serif;
 `
 const TextP4 = styled.p`
   font-size: 15px;
   line-height: 1.5;
   color: #D5D5D5;
-  font-family: 'Titillium Web', sans-serif;
 `
 
 export default Portfolio;

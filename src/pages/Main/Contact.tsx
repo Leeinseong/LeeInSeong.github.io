@@ -102,23 +102,18 @@ const Contact = () =>  {
 }
 
 const Container = styled.div`
+  width: 100%;
   padding-top: 10px;
   padding-bottom: 100px;
-  height:Auto;
   background: #f8f8f8;
 
-  @media only screen and (max-width: 1280px) {
-    width: 1280px;
-  }
 `
 const InnerDiv = styled.div`
-  height: Auto;
-  width: 1240px;
-  margin: 0 auto;
-
-  @media only screen and (max-width: 1280px) {
-    padding-left: 20px;
-    padding-right: 20px;
+  width: 1280px;
+  margin: 0px auto;
+  
+  @media only screen and (max-width: 767px) {
+    width: 90%;
   }
 `
 const MainTitle = styled.h1`
@@ -126,9 +121,12 @@ const MainTitle = styled.h1`
   font-size: 100px;
   font-weight: bold;
   font-style: italic;
-  font-family: 'Titillium Web', sans-serif;
-  color: #3b310f;
+  
+  @media only screen and (max-width: 767px) {
+    font-size: 80px;
+  }
 `
+
 const ContentDiv = styled.div`
   width: Auto;
   font-size:20px;

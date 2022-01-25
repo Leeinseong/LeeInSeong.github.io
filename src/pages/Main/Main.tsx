@@ -1,5 +1,13 @@
+import { createContext, useState } from 'react';
 
-export const projectList = [
+import Portfolio   from './Portfolio';
+import About   from './About';
+import Career  from './Career';
+import Project from './Project';
+import Skill   from './Skill';
+import Contact   from './Contact';
+
+const projectList = [
   //Tier.J
   {
     type: "co",
@@ -273,3 +281,26 @@ export const projectList = [
     ],
   },
 ];
+
+export const ProjectContext = createContext({
+  project: "",
+  setProject: (index: any) => {}
+});
+
+const Main = () => {
+  const [project, setProject] = useState("");
+  return (
+    <>
+      <ProjectContext.Provider value={{project, setProject}}>
+        <Portfolio/>
+        <About projectList={projectList}/>
+        <Career projectList={projectList}/>
+        <Project projectList={projectList}/>
+        <Skill/> 
+        <Contact/>
+      </ProjectContext.Provider>
+    </>
+  );
+}
+  
+export default Main;

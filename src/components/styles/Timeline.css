@@ -15,7 +15,8 @@
     display: block;
     padding-left: 50px;
     padding-right: 70px;
-    position: absolute
+    position: absolute;
+    height: 40px;
 }
 
 .cbp_tmtimeline>li .cbp_tmtime span {
