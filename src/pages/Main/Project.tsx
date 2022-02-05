@@ -30,8 +30,8 @@ const Project = (props: any) =>  {
                       <ContentDiv>{pItem.period}</ContentDiv>
                       <TitleDiv>인력구성 및 기여도</TitleDiv>
                         <ContentDiv>
-                          {pItem.contribution?.split('\n').map((line: any) => {
-                            return <>{line}<br/></>;
+                          {pItem.contribution?.split('\n').map((line: any, idx:string) => {
+                            return <span key={idx}>{line}<br/></span>;
                           })}
                         </ContentDiv>
                       <TitleDiv>개발환경</TitleDiv>
@@ -42,8 +42,8 @@ const Project = (props: any) =>  {
                       <ContentDiv>{pItem.management}</ContentDiv>
                       <TitleDiv>상세설명</TitleDiv>
                       <ContentDiv>
-                        {pItem.description?.split('\n').map((line: any) => {
-                          return <>{line}<br/></>;
+                        {pItem.description?.split('\n').map((line: any, key: string) => {
+                          return <span key={idx}>{line}<br/></span>;
                         })}
                       </ContentDiv>
                       {pItem.git? (
@@ -54,16 +54,16 @@ const Project = (props: any) =>  {
                       ) : null}
                       <TitleDiv>역할</TitleDiv>
                       <ContentDiv>
-                        {pItem.role?.split('\n').map((line: any) => {
-                          return <>{line}<br/></>;
+                        {pItem.role?.split('\n').map((line: any, idx:string) => {
+                          return <span key={idx}>{line}<br/></span>;
                         })}
                       </ContentDiv>
                       {pItem.result? (
                         <>
                           <TitleDiv>성과/결과</TitleDiv>
                           <ContentDiv>
-                            {pItem.result?.split('\n').map((line: any) => {
-                              return <>{line}<br/></>;
+                            {pItem.result?.split('\n').map((line: any, idx:string) => {
+                              return <span key={idx}>{line}<br/></span>;
                             })}
                           </ContentDiv>
                         </>
@@ -72,11 +72,11 @@ const Project = (props: any) =>  {
                         <>
                           <TitleDiv>참고</TitleDiv>
                           <ContentDiv>
-                            {pItem.href?.map((hrefItem: any) => { 
+                            {pItem.href?.map((hrefItem: any, idx:string) => { 
                               return(
-                                <>
+                                <div key={idx}>
                                   {hrefItem.title} : <a target="_blank" rel='noreferrer' href={hrefItem.link}>{hrefItem.link}</a><br/>
-                                </>
+                                </div>
                               )
                             })}
                           </ContentDiv>

@@ -78,7 +78,7 @@ const MainTitle = styled.h1`
 const TitleCareer = styled.h2` 
   font-size: 20px;
 `
-const DetailCareer = styled.p`
+const DetailCareer = styled.span`
   font-size: 18px;
   margin-top: 0px;
   margin-bottom: 0px;

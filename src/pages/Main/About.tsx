@@ -12,19 +12,16 @@ const About = (props: any) => {
           <TextDiv>
             <TitleAbout>경력사항</TitleAbout>
             <DetailAbout>
-              {projectList?.map((item: any, idx: any) => {
-                if(item.type !== "personal"){
-                  return(
-                    <DetailAboutContainer key={idx}>
-                      <DetailAboutPeriod><b>{item.startMonth} ~ {item.endMonth} </b></DetailAboutPeriod>
-                      <DetailAboutCompanyContainer>
-                        <DetailAboutCompany>{item.name + " "}</DetailAboutCompany>
-                        <DetailAboutDepartment>{item.department}</DetailAboutDepartment>
-                      </DetailAboutCompanyContainer>
-                    </DetailAboutContainer>
-                  )
-                }
-                return <></>
+              {projectList?.map((item: any, idx: string) => {
+                return(
+                  <DetailAboutContainer key={idx}>
+                    <DetailAboutPeriod><b>{item.startMonth} ~ {item.endMonth} </b></DetailAboutPeriod>
+                    <DetailAboutCompanyContainer>
+                      <DetailAboutCompany>{item.name + " "}</DetailAboutCompany>
+                      <DetailAboutDepartment>{item.department}</DetailAboutDepartment>
+                    </DetailAboutCompanyContainer>
+                  </DetailAboutContainer>
+                )
               })}
             </DetailAbout>
             
@@ -108,7 +105,7 @@ const TitleAbout = styled.h2`
   font-size: 30px;
   margin-bottom:5px;
 `
-const DetailAbout = styled.p`
+const DetailAbout = styled.span`
   margin-top: 0px;
   line-height : 1.7;
   font-size: 20px;

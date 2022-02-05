@@ -276,11 +276,13 @@ export const ProjectContext = createContext({
 
 const Main = () => {
   const [project, setProject] = useState("");
+  const companyProjectList = projectList.filter((x: any) => x.type !== "personal");
+
   return (
     <>
       <ProjectContext.Provider value={{project, setProject}}>
         <Portfolio/>
-        <About projectList={projectList}/>
+        <About projectList={companyProjectList}/>
         <Career projectList={projectList}/>
         <Project projectList={projectList}/>
         <Skill/> 

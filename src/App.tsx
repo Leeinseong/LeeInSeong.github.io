@@ -1,24 +1,28 @@
-import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 import styled from 'styled-components';
 
 import Main from './pages/Main/Main';
+import Blog from './pages/Blog/Blog';
 
 import Header from './components/Header';
 import HeaderMobile from './components/HeaderMobile';
 
+import getWindowDimensions from "./utills/useWindowDimensions";
+
 const App = () => {
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" })
+  const { width } = getWindowDimensions();
+
 
   return (
     <Layout id="Container">
-      {!isMobile ? <Header/> : <HeaderMobile/>}
+      {width > 767 ? <Header/> : <HeaderMobile/>}
       <Content>
         <Router>
           <Switch>
-              <Route exact path="/" component={Main} />
+            <Route exact path="/" component={Main} />
+            <Route path="/Blog" component={Blog} />
+            <Redirect to="/"/>
           </Switch>
         </Router>
       </Content>
@@ -34,11 +38,5 @@ const Content = styled.div`
 margin: 0 auto;
 width : 100%;
 `
-const MobileLayout = styled.div`
-  width: 100%;
-`
-const MobileContent = styled.div`
-  margin: 0 0;
-  width: 100%;
-`
+
 export default App;

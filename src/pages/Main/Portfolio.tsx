@@ -57,24 +57,24 @@ const TextDiv = styled.div`
     padding: 0px 10px;
   }
 `
-const TextP1 = styled.p`
+const TextP1 = styled.span`
   font-size: 50px;
   font-weight: bold;
   color: #3b310f;
   margin: 0;
 `
-const TextP2 = styled.p`
+const TextP2 = styled.span`
   font-size: 20px;
   font-weight: bold;
   margin: 0;
 `
 
-const TextP3 = styled.p`
+const TextP3 = styled.span`
 font-size: 15px;
 line-height: 1.5;
 color: #54450e;
 `
-const TextP4 = styled.p`
+const TextP4 = styled.span`
   font-size: 15px;
   line-height: 1.5;
   color: #D5D5D5;
