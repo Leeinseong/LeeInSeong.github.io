@@ -6,6 +6,9 @@ import Career  from './Career';
 import Project from './Project';
 import Skill   from './Skill';
 import Contact   from './Contact';
+import getWindowDimensions from "../../utills/useWindowDimensions";
+import Header from './Header';
+import HeaderMobile from './HeaderMobile';
 
 const projectList = [
   //Tier.J
@@ -277,9 +280,12 @@ export const ProjectContext = createContext({
 const Main = () => {
   const [project, setProject] = useState("");
   const companyProjectList = projectList.filter((x: any) => x.type !== "personal");
+  const { width } = getWindowDimensions();
 
   return (
     <>
+      {width > 767 ? <Header/> : <HeaderMobile/>}
+
       <ProjectContext.Provider value={{project, setProject}}>
         <Portfolio/>
         <About projectList={companyProjectList}/>

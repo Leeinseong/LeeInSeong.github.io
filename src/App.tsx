@@ -5,18 +5,9 @@ import styled from 'styled-components';
 import Main from './pages/Main/Main';
 import Blog from './pages/Blog/Blog';
 
-import Header from './components/Header';
-import HeaderMobile from './components/HeaderMobile';
-
-import getWindowDimensions from "./utills/useWindowDimensions";
-
 const App = () => {
-  const { width } = getWindowDimensions();
-
-
   return (
     <Layout id="Container">
-      {width > 767 ? <Header/> : <HeaderMobile/>}
       <Content>
         <Router>
           <Switch>

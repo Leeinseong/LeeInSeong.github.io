@@ -1,5 +1,6 @@
 //Header 파일
 import {useEffect, useState} from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 // import { Link } from 'react-router-dom';
 
@@ -34,6 +35,11 @@ const Header = () => {
           <MenuButton onClick={() => MoveScroll("Project")}>PROJECT</MenuButton>
           <MenuButton onClick={() => MoveScroll("Skill")}>SKILL</MenuButton>
           <MenuButton onClick={() => MoveScroll("Contact")}>CONTACT</MenuButton>
+          <Link to='/blog'>
+            <MenuButton className='text-shadow' style={{color:"#FFF37C"}}>
+              BLOG
+            </MenuButton>
+          </Link> 
         </MenuDiv>
       </InnerDiv>
     </Head>
@@ -84,7 +90,7 @@ right: 15px;
 transform: translateY(-50%);
 position: absolute;
 `
-const MenuButton = styled.button`
+const MenuButton = styled.div`
 display: block;
 padding: 20px 0;
 font-size: 17px;

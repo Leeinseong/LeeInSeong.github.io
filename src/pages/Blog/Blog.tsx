@@ -1,13 +1,16 @@
-import { createContext, useState } from 'react';
 
-export const ProjectContext = createContext({
-  project: "",
-  setProject: (index: any) => {}
-});
+import page1 from './components/page1';
+
+
+const aa = {
+  comp: page1,
+}
 
 const Blog = () => {
+  console.log(aa.comp)
   return (
     <>
+    {aa.comp}
       BLOG
     </>
   );
