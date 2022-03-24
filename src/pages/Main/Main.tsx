@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 import Portfolio   from './Portfolio';
 import About   from './About';
@@ -6,9 +6,9 @@ import Career  from './Career';
 import Project from './Project';
 import Skill   from './Skill';
 import Contact   from './Contact';
-import getWindowDimensions from "../../utills/useWindowDimensions";
 import Header from './Header';
 import HeaderMobile from './HeaderMobile';
+import getWindowDimensions from "../../utills/useWindowDimensions";
 
 const projectList = [
   //Tier.J

@@ -1,8 +1,6 @@
-//Header 파일
-import {useEffect, useState} from 'react'
-import { Link } from 'react-router-dom';
+import React, {useEffect, useState} from 'react'
+import Link from 'next/Link';
 import styled from 'styled-components';
-// import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [scrollY, setScrollY] = useState(window.scrollY);
@@ -35,7 +33,7 @@ const Header = () => {
           <MenuButton onClick={() => MoveScroll("Project")}>PROJECT</MenuButton>
           <MenuButton onClick={() => MoveScroll("Skill")}>SKILL</MenuButton>
           <MenuButton onClick={() => MoveScroll("Contact")}>CONTACT</MenuButton>
-          <Link to='/blog'>
+          <Link href='/blog'>
             <MenuButton className='text-shadow' style={{color:"#FFF37C"}}>
               BLOG
             </MenuButton>

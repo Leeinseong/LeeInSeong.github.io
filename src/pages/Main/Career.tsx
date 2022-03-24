@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 import {ProjectContext} from './Main';
-import "../../components/styles/Timeline.css";
 
 const Career = (props: any) => {
   const {setProject} = useContext(ProjectContext)

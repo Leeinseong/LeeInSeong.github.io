@@ -1,6 +1,5 @@
-//Header 파일
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import Link from 'next/Link';
 import styled from 'styled-components';
 
 const HeaderMobile = () => {
@@ -35,7 +34,7 @@ const HeaderMobile = () => {
           <MenuButton onClick={() => MoveScroll("Project")}>PROJECT</MenuButton>
           <MenuButton onClick={() => MoveScroll("Skill")}>SKILL</MenuButton>
           <MenuButton onClick={() => MoveScroll("Contact")}>CONTACT</MenuButton>
-          <Link to='/blog'>
+          <Link href='/blog'>
             <MenuButton className='text-shadow' style={{color:"#FFF37C"}}>
               BLOG
             </MenuButton>
