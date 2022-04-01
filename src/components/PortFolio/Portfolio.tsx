@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Portfolio = () => {
   return (
@@ -8,13 +9,21 @@ const Portfolio = () => {
         <TextDiv>
           <TextP1>LeeInSeong</TextP1>
           <TextP2>4th Year Junior Developer</TextP2>
-          <TextP3>안녕하세요. 다양한 언어, 프로젝트를 경험하며 개발실력과 커뮤니케이션 능력을 늘려가는 개발자입니다.<br/> 모든 프로젝트에 항상 책임감을 가지고 참여합니다.</TextP3>
-          <TextP4>Good morning. A developer who experiences various languages ​​and projects to increase development and communication skills.<br/> Always participates in all projects with responsibility.</TextP4>
+          <TextP3>
+            안녕하세요. 다양한 언어, 프로젝트를 경험하며 개발실력과 커뮤니케이션
+            능력을 늘려가는 개발자입니다.
+            <br /> 모든 프로젝트에 항상 책임감을 가지고 참여합니다.
+          </TextP3>
+          <TextP4>
+            Good morning. A developer who experiences various languages and
+            projects to increase development and communication skills.
+            <br /> Always participates in all projects with responsibility.
+          </TextP4>
         </TextDiv>
       </InnerDiv>
     </Container>
   );
-}
+};
 
 const Container = styled.div`
   width: 100%;
@@ -23,7 +32,7 @@ const Container = styled.div`
     padding-top: 50px;
     padding-bottom: 20px;
   }
-`
+`;
 const InnerDiv = styled.div`
   width: 1280px;
   height: 700px;
@@ -35,10 +44,10 @@ const InnerDiv = styled.div`
     width: 100%;
     height: auto;
     padding-bottom: 20px;
-    text-align:center;
+    text-align: center;
     background: none;
   }
-`
+`;
 const InImg = styled.img`
   display: none;
   width: 100%;
@@ -46,7 +55,7 @@ const InImg = styled.img`
   @media only screen and (max-width: 767px) {
     display: block;
   }
-`
+`;
 const TextDiv = styled.div`
   position: relative;
   padding-left: 760px;
@@ -56,28 +65,28 @@ const TextDiv = styled.div`
   @media only screen and (max-width: 767px) {
     padding: 0px 10px;
   }
-`
+`;
 const TextP1 = styled.span`
   font-size: 50px;
   font-weight: bold;
   color: #3b310f;
   margin: 0;
-`
+`;
 const TextP2 = styled.span`
   font-size: 20px;
   font-weight: bold;
   margin: 0;
-`
+`;
 
 const TextP3 = styled.span`
-font-size: 15px;
-line-height: 1.5;
-color: #54450e;
-`
+  font-size: 15px;
+  line-height: 1.5;
+  color: #54450e;
+`;
 const TextP4 = styled.span`
   font-size: 15px;
   line-height: 1.5;
-  color: #D5D5D5;
-`
+  color: #d5d5d5;
+`;
 
 export default Portfolio;
