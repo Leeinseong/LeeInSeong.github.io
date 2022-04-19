@@ -1,5 +1,4 @@
 import React from "react";
-import type { AppProps } from "next/app";
 import Head from "next/head";
 
 import { createGlobalStyle } from "styled-components";
@@ -9,15 +8,21 @@ export const Global = createGlobalStyle`
     margin: 0px;
   }
 `;
-export default function MyApp({ Component, pageProps }: AppProps) {
+
+interface AppProps {
+  Component: any;
+  store: any;
+}
+
+export default function MyApp({ Component }: AppProps) {
   return (
     <>
-      <Global />
+      {/* <Global /> */}
       <Head>
         <meta charSet="utf-8" />
         <title>Inseong_Portofolio</title>
       </Head>
-      <Component {...pageProps} />
+      <Component />
     </>
   );
 }
