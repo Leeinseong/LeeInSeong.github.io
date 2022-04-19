@@ -1,6 +1,6 @@
+const debug = process.env.NODE_ENV !== "production";
+const name = "leeinseong.github.io";
+
 module.exports = {
-  assetPrefix:
-    process.env.NODE_ENV === "production"
-      ? "https://https://leeinseong.github.io/"
-      : "",
+  assetPrefix: !debug ? `/${name}/` : "",
 };
