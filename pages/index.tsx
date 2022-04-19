@@ -1,6 +1,14 @@
 import React, { createContext, useState } from "react";
 import styled from "styled-components";
 
+import PortfolioLayout from "../components/Layout/PortfolioLayout";
+import About from "../components/PortFolio/About";
+import Career from "../components/PortFolio/Career";
+import Contact from "../components/PortFolio/Contact";
+import Portfolio from "../components/PortFolio/Portfolio";
+import Project from "../components/PortFolio/Project";
+import Skill from "../components/PortFolio/Skill";
+
 const Content = styled.div`
   margin: 0 auto;
   width: 100%;
@@ -298,7 +306,20 @@ const Home = () => {
     (x: any) => x.type !== "personal"
   );
 
-  return <div>test</div>;
+  return (
+    <PortfolioLayout>
+      <Content>
+        <ProjectContext.Provider value={{ project, setProject }}>
+          <Portfolio />
+          <About projectList={companyProjectList} />
+          <Career projectList={projectList} />
+          <Project projectList={projectList} />
+          <Skill />
+          <Contact />
+        </ProjectContext.Provider>
+      </Content>
+    </PortfolioLayout>
+  );
 };
 
 export default Home;
