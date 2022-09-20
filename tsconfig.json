@@ -16,7 +16,8 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["components/*"],
+      "@/constant/*": ["constant/*"],
+      "@/components/*": ["components/*"],
     },
     "incremental": true
   },
