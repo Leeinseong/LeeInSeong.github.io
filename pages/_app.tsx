@@ -1,8 +1,8 @@
-import React from "react";
-import Head from "next/head";
-import type { AppProps } from "next/app";
+import React from 'react';
+import Head from 'next/head';
+import type { AppProps } from 'next/app';
 
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const Global = createGlobalStyle`
   body{
@@ -10,7 +10,7 @@ export const Global = createGlobalStyle`
   }
 `;
 
-export default function MyApp({ Component }: AppProps) {
+const MyApp = ({ Component }: AppProps) => {
   return (
     <>
       {/* <Global /> */}
@@ -21,4 +21,6 @@ export default function MyApp({ Component }: AppProps) {
       <Component />
     </>
   );
-}
+};
+
+export default MyApp;
